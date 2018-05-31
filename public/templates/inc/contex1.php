@@ -34,7 +34,7 @@
 		</ul>
 		<!-- /.navbar-top-links -->
 
-		<div class="navbar-default sidebar" role="navigation" style="">
+		<div class="sidebar" role="navigation" style="">
 			<div class="sidebar-nav navbar-collapse">
 				<ul class="nav" id="side-menu">
 				</li>
