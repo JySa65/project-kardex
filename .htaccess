@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <IfModule mod_rewrite.c>
 RewriteEngine On
 	#regla de redireccion
@@ -9,18 +8,4 @@ RewriteEngine On
 Order allow,deny
 Deny from all
 </Files>
-=======
-Options -Indexes
-RewriteEngine On
-AddType application/vnd.ms-fontobject .eot
-AddType application/octet-stream .otf .ttf
-AddType application/x-font-woff .woff
-RewriteBase /project-kardex/
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.+)$ index.php?route=$1 [QSA,L]
 
-RewriteCond %{REQUEST_URI} !^.*/static/.*$
-RewriteCond %{REQUEST_URI} !^.*/static/fonts/fontawesome-webfont.ttf?v=4.6.3.*$
-RewriteRule .*$ index.php?route=$1 [QSA,L]
->>>>>>> 98fd657484e2d8d5322f5a4c3cb75423e3e5e280
