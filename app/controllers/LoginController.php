@@ -7,14 +7,13 @@ if (is_authenticated()) {
 }
 use framework\view\View;
 use app\models\AccountModel;
-// use app\databases\AccountBD;
-// require('../databases/AccountBD.php');
+use app\databases\AccountBD;
 class LoginController
 {
 	
 	function __construct()
 	{
-		// new AccountBD;
+		new AccountBD;
 		$this->view = new View;
 	}
 
