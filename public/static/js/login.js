@@ -40,7 +40,7 @@ function check(event) {
 		}else if(data['rs'] == false){
 			window.location.href = "login";
 		}else{
-			message.innerText = data['rs'];
+			alert(data['rs']);
 			username.value = "";
 			password.value = "";
 		}

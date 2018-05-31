@@ -63,7 +63,7 @@
         </div>
     </div>
 
+<script type="text/javascript" src="<?= STATIC_DIR . "js/login.js" ?>"></script>
 <?php 
 @include (TEMPLATES_DIR . "templates/inc/footer.php");
 ?>
-<script type="text/javascript" src="<?= STATIC_DIR . "js/login.js" ?>"></script>
