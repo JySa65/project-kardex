@@ -1,0 +1,17 @@
+body{
+	margin: 0;
+	padding: 0;
+	background: -webkit-linear-gradient(#001fff30, #f5f8f9) fixed;
+	background: -moz-linear-gradient(#001fff30, #f5f8f9) fixed;
+	background: -o-linear-gradient(#001fff30, #f5f8f9) fixed;
+}
+#banner{
+	height: 200px;
+	width: 98%;
+}
+#estilo1{
+	background-color: #ffffff;
+	height: 20%;
+	width: 100%;
+
+}
