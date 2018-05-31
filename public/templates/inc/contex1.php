@@ -1,7 +1,7 @@
 <div id="wrapper">
 
 	<!-- Navigation -->
-	<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+	<nav class="navbar navbar-inverse navbar-static-top" role="navigation" style="margin-bottom: 0">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 				<span class="sr-only">Toggle navigation</span>
@@ -9,7 +9,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="<?= url('dashboard') ?>">Vehiculo</a>
+			<a class="navbar-brand" href="<?= url('dashboard') ?>">KARDEX</a>
 		</div>
 		<!-- /.navbar-header -->
 
@@ -20,9 +20,7 @@
 					<?= strtoupper(sessionLocal('user')->username);?><i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
 				</a>
 				<ul class="dropdown-menu dropdown-user">
-					<li><a href="#"><i class="fa fa-user fa-fw"></i>Perfil</a>
-					</li>
-					<li><a href="#"><i class="fa fa-gear fa-fw"></i>Configuracion</a>
+					<li><a href="#"><i class="fa fa-gear fa-fw"></i>Cambio de Clave</a>
 					</li>
 					<li class="divider"></li>
 					<li><a href="<?= url('logout') ?>"><i class="fa fa-sign-out fa-fw"></i>Cerrar Sesi&oacute;n</a>
@@ -39,22 +37,19 @@
 				<ul class="nav" id="side-menu">
 				</li>
 				<li class="active">
-					<a href="<?= url('dashboard'); ?>" class="active"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+					<a href="<?= url('dashboard'); ?>" class="active"><i class="fa fa-dashboard fa-fw"></i> Panel de control</a>
 				</li>
 				<li>
-					<a href="<?= url('account'); ?>"><i class="fa fa-users fa-fw"></i>Conductores</a>
+					<a href="<?= url('account'); ?>" class="active"><i class="fa fa-users fa-fw"></i>Registros</a>
 				</li>
 				<li>
-					<a href="<?= url('vehicle'); ?>"><i class="fa fa-car fa-fw"></i> Vehiculos</a>
+					<a href="<?= url('vehicle'); ?>" class="active"><i class="fa fa-car fa-fw"></i> Listados</a>
 				</li>
 				<li>
-					<a href="<?= url('assign_vehicle') ?>"><i class="fa fa-id-badge fa-fw "></i>Asignar Vehiculo</a>
+					<a href="#" class="active"><i class="fa fa-university fa-fw"></i> Reportes</a>
 				</li>
 				<li>
-					<a href="#"><i class="fa fa-university fa-fw"></i> Departamento</a>
-				</li>
-				<li>
-					<a href="#"><i class="fa fa-support fa-fw"></i> Mantenimiento</a>
+					<a href="<?= url('logout')?>" class="active"><i class="fa fa-support fa-fw"></i> Cerrar Sesi&oacute;n</a>
 				</li>
 			</ul>
 		</div>
