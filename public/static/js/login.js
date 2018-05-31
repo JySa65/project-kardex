@@ -36,16 +36,11 @@ function check(event) {
 		var message = document.getElementById('message');
 		var type = document.getElementById('type_messaje');
 		if (data['rs'] == true) {
-			message.innerText = "Bienvenido";
-			type.classList.remove("alert-danger", "hidden");
-			type.classList.add('alert-success');
 			window.location.href="dashboard";
 		}else if(data['rs'] == false){
 			window.location.href = "login";
 		}else{
 			message.innerText = data['rs'];
-			type.classList.add("alert-danger");
-			type.classList.remove('alert-success', 'hidden');
 			username.value = "";
 			password.value = "";
 		}
