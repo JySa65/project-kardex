@@ -1,0 +1,13 @@
+{
+    "name": "jysa/project-manuel",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "JySa65",
+            "email": "r.a.s.g65@gmail.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^2.4"
+    }
+}
