@@ -17,7 +17,7 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 					</div>
 					<div class="col-xs-9 text-right">
 						<div class="huge">26</div>
-						<div>Coductores</div>
+						<div>Usuarios</div>
 					</div>
 				</div>
 			</div>
@@ -39,7 +39,7 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 					</div>
 					<div class="col-xs-9 text-right">
 						<div class="huge">12</div>
-						<div>Vehiculos</div>
+						<div>Instituciones</div>
 					</div>
 				</div>
 			</div>
@@ -61,7 +61,7 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 					</div>
 					<div class="col-xs-9 text-right">
 						<div class="huge">124</div>
-						<div>Departamento</div>
+						<div>Productos</div>
 					</div>
 				</div>
 			</div>
@@ -83,7 +83,7 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 					</div>
 					<div class="col-xs-9 text-right">
 						<div class="huge">13</div>
-						<div>Matenimiento</div>
+						<div></div>
 					</div>
 				</div>
 			</div>
