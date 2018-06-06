@@ -23,7 +23,7 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">DESEP <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Reseña Historica</a></li>
+            <li><a href="<?=url("info/historia") ?>">Reseña Historica</a></li>
             <li><a href="<?=url("info/misionvision")  ?>">Mision y Vision</a></li>
             <li><a href="#">Objetivos Estrategicos</a></li>
           </ul>
