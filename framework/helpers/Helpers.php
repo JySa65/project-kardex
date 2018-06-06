@@ -62,7 +62,7 @@ function redirect($path, $args=[])
 
 function url($path)
 {
-	echo $_SERVER['REQUEST_SCHEME'] . "://" . URL_DIR . $path;
+	return $_SERVER['REQUEST_SCHEME'] . "://" . URL_DIR . $path;
 }
 
 function test_text_number($data){
@@ -135,5 +135,19 @@ function valRef(&$arr)
 	return $refs;
 }
 
+function is_file_valid(array $arr, array $type)
+{
+	$bool = 0;
+	for ($i=0; $i < count($arr); $i++) { 
+		$res = explode(".", $arr[$i]);
+		if (!in_array($res[1], $type)) {
+			$bool = $bool +  1;
+		}
+	}
+	if ($bool !== 0) {
+		return false;
+	}
+	return true;
+}
 
 ?>

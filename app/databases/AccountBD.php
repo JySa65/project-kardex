@@ -26,8 +26,10 @@ class AccountBD extends Conection
         last_name varchar(50),
         password varchar(128) NOT NULL,
         email varchar(255) UNIQUE,
-        is_active boolean NOT NULL,
-        is_superuser boolean NOT NULL,
+        is_active boolean DEFAULT FALSE,
+        is_superuser boolean DEFAULT FALSE,
+        is_supervise boolean DEFAULT FALSE,
+        is_worker boolean DEFAULT FALSE,
         created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
         updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP);
 
@@ -37,6 +39,6 @@ class AccountBD extends Conection
         FOR EACH ROW
         EXECUTE PROCEDURE trigger_set_timestamp();"; 
         $result = pg_query($query) or die('Crear la tabla fallo: ' . pg_last_error());
-	}
+    }
 }
 ?>

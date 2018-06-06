@@ -41,7 +41,15 @@
 					<a href="<?= url('dashboard'); ?>" class="active"><i class="fa fa-dashboard fa-fw"></i> Panel de control</a>
 				</li>
 				<li>
-					<a href="<?= url('account'); ?>" class="active"><i class="fa fa-users fa-fw"></i>Registros</a>
+					<a href="#!" class="active"><i class="fa fa-users fa-fw"></i>Registros</a>
+					<ul class="nav nav-second-level">
+						<li>
+							<a href="<?= url('account/new') ?>" class="active">Usuario</a>
+						</li>
+						<li>
+							<a href="<?= url('product/new') ?>" class="active">Producto</a>
+						</li>
+					</ul>
 				</li>
 				<li>
 					<a href="<?= url('vehicle'); ?>" class="active"><i class="fa fa-car fa-fw"></i> Listados</a>
