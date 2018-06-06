@@ -15,5 +15,13 @@ class InfoController extends View
 	{
 		return $this->render("index/departamento");
 	}
+	function misionvision()
+	{
+		return $this->render("info/misionvision");
+	}
+	function contactanos()
+	{
+		return $this->render("info/contacto");
+	}
 }
 ?>
