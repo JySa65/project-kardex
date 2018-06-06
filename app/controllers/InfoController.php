@@ -11,17 +11,21 @@ class InfoController extends View
 		
 	}
 
-	function index()
+	/*function index()
 	{
 		return $this->render("index/departamento");
-	}
+	}*/
 	function misionvision()
 	{
 		return $this->render("info/misionvision");
 	}
-	function contactanos()
+	function historia()
 	{
-		return $this->render("info/contacto");
+		return $this->render("info/historia");
+	}
+	function objetivos()
+	{
+		return $this->render("info/objetivos");
 	}
 }
 ?>
