@@ -3,7 +3,7 @@
    ?>
   
 	<header id="estilo1">
-		<img src="static/img/banner.png" id="banner">
+		<img src="../static/img/banner.png" id="banner">
 	</header>
 	<nav class="navbar navbar-inverse" style="border-color: #7a78c3">
 		<div class="container-fluid">

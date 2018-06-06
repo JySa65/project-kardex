@@ -4,7 +4,8 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="id=edge">
-	<title>Aplicacion Web Para Control De Automoviles</title>
+	<title>KARDEX</title>
+	<link rel="shortcut icon" href="static/img/oie_transparent.png" type="image/x-icon">
 	<link rel="stylesheet" href= <?= STATIC_DIR . "css/bootstrap.min.css"; ?> >
 	<link rel="stylesheet" href= <?= STATIC_DIR . "css/metisMenu.min.css"; ?> >
 	<link rel="stylesheet" href= <?= STATIC_DIR . "css/sb-admin-2.min.css"; ?> >

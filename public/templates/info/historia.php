@@ -1,9 +1,9 @@
-	<?php 
+<?php 
   @include (TEMPLATES_DIR . "templates/inc/head.php");  
    ?>
   
 	<header id="estilo1">
-		<img src="static/img/banner.png" id="banner">
+		<img src="../static/img/banner.png" id="banner">
 	</header>
 	<nav class="navbar navbar-inverse" style="border-color: #7a78c3">
 		<div class="container-fluid">
@@ -25,7 +25,7 @@
           <ul class="dropdown-menu">
             <li><a href="<?=url("info/historia")  ?>">Reseña Historica</a></li>
             <li><a href="<?=url("info/misionvision")  ?>">Mision y Vision</a></li>
-            <li><a href="<?=url("info/objetivos") ?>">Objetivos Estrategicos</a></li>
+            <li><a href="<?= url("info/objetivos")  ?>">Objetivos Estrategicos</a></li>
           </ul>
         </li>
       </ul>
