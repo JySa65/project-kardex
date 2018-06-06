@@ -12,7 +12,7 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 	<div class="col-lg-12">
 		<div class="panel panel-success">
 			<div class="panel-heading">
-				<h4>Registro De Conductores</h4>
+				<h4>Registro de nuevos usuarios</h4>
 			</div>
 			<div class="panel-body">
 				<div class="row">
@@ -34,20 +34,35 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 						</div>
 						<div class="col-lg-6">
 							<div class="form-group">
+								<label for="id_nacionality">Nivel de Acceso</label>
+								<select name="nacionality" id="id_nacionality" class="form-control" autofocus="on" autocomplete="off" required value="">
+									<?php if (isset($user)){ 
+										echo "<option selected value=" . $user->nationality . ">". $user->nationality ."</option>"; 
+									}else{ ?>
+										<option value="" selected="">Escojer Nivel</option>
+										<option value="1">Administrador</option>
+										<option value="2">Supervisor</option>
+										<option value="3">Trabajador</option>
+									<?php } ?>
+								</select>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="form-group">
 								<label for="id_cedula">Cedula</label>
-								<input class="form-control" id="id_cedula" name="cedula" type="text" placeholder="Cedula" maxlength="8" autocomplete="off" required value="<?= isset($user) ? $user->cedula : '' ?>">
+								<input class="form-control" id="id_cedula" name="cedula" type="text" placeholder="Cedula" maxlength="8" autocomplete="off" pattern="[0-9]{0,8}" oninvalid="setCustomValidity('la cedula debe ser numerica')" required value="<?= isset($user) ? $user->cedula : '' ?>">
 							</div>
 						</div>
 						<div class="col-lg-6">
 							<div class="form-group">
-								<label for="id_name">Nombres</label>
-								<input class="form-control" id="id_name" name="name" type="text" placeholder="Nombres" maxlength="50" autocomplete="off" required value="<?= isset($user) ? $user->name : '' ?>">
+								<label for="id_name">Nombre</label>
+								<input class="form-control" id="id_name" name="name" type="text" placeholder="Primer Nombre" maxlength="50" autocomplete="off" pattern="[a-zA-Z]" required value="<?= isset($user) ? $user->name : '' ?>">
 							</div>
 						</div>
 						<div class="col-lg-6">
 							<div class="form-group">
-								<label for="id_last_name">Apellidos</label>
-								<input class="form-control" id="id_last_name" name="last_name" type="text" placeholder="Apellidos" maxlength="50" autocomplete="off" required value="<?= isset($user) ? $user->last_name : '' ?>">
+								<label for="id_last_name">Apellido</label>
+								<input class="form-control" id="id_last_name" name="last_name" type="text" placeholder=" Primer Apellido" maxlength="50" autocomplete="off" pattern="[a-zA-Z]" required value="<?= isset($user) ? $user->last_name : '' ?>">
 							</div>
 						</div>
 						<div class="col-lg-6">
@@ -56,23 +71,24 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 								<input class="form-control" id="id_email" name="email" type="email" placeholder="Correo Electronico" maxlength="255" autocomplete="off" value="<?= isset($user) ? $user->email : '' ?>">
 							</div>
 						</div>
-						<div class="col-lg-6">
+						<div class="col-lg-12">
 							<div class="form-group">
 								<label for="id_email">Direccion</label>
-								<textarea name="address" id="id_address" cols="30" rows="1" class="form-control" style="overflow:auto;resize:none" placeholder="Direccion"><?= isset($user) ? $user->address : '' ?></textarea>
+								<textarea name="address" id="id_address" cols="30" rows="1" class="form-control" style="overflow:auto; height: 50%;" placeholder="Direccion"><?= isset($user) ? $user->address : '' ?></textarea>
 							</div>
 						</div>
 
-						<div class="col-lg-6">
+						<!-- <div class="col-lg-6">
 							<div class="form-group">
 								<label for="id_email">Direccion</label>
 								<input class="form-control" id="id_img" name="img[]" type="file" placeholder="Hola" multiple="multiple" >
 							</div>
-						</div>
+						</div> -->
 
 						<div class="col-lg-12 text-center">
 							<div class="form-group">
-								<button class="btn btn-primary btn-block"><i class="fa fa-save"></i> Aceptar</button>
+								<button class="btn btn-primary "><i class="fa fa-save"></i> Aceptar</button>
+								<button class="btn btn-warning "><i class="fa fa-recycle"></i> Limpiar</button>
 							</div>
 						</div>
 					</form>
