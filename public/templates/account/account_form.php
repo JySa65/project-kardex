@@ -50,7 +50,7 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 						<div class="col-lg-6">
 							<div class="form-group">
 								<label for="id_cedula">Cedula</label>
-								<input class="form-control solonumeros" id="id_cedula" name="cedula" type="text" placeholder="Cedula" maxlength="8" autocomplete="off" pattern="[0-9]{0,8}" oninvalid="setCustomValidity('la cedula debe ser numerica')" required value="<?= isset($user) ? $user->cedula : '' ?>">
+								<input class="form-control" id="id_cedula" name="cedula" type="number" placeholder="Cedula" min="1" max="99999999" autocomplete="off" required value="<?= isset($user) ? $user->cedula : '' ?>">
 							</div>
 						</div>
 						<div class="col-lg-6">
@@ -77,13 +77,11 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 								<textarea name="address" id="id_address" cols="30" rows="1" class="form-control" style="overflow:auto; height: 50%;" placeholder="Direccion"><?= isset($user) ? $user->address : '' ?></textarea>
 							</div>
 						</div>
-
-						<!-- <div class="col-lg-6">
+						<div class="col-lg-12">
 							<div class="form-group">
-								<label for="id_email">Direccion</label>
-								<input class="form-control" id="id_img" name="img[]" type="file" placeholder="Hola" multiple="multiple" >
+								<span style="color: red">Todos los campos son obligatorios</span>
 							</div>
-						</div> -->
+						</div> 
 
 						<div class="col-lg-12 text-center">
 							<div class="form-group">

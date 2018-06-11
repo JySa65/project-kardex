@@ -12,7 +12,7 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 	<div class="col-lg-12">
 		<div class="panel panel-success">
 			<div class="panel-heading">
-				<h4>Registro de nuevos ingresos de productos</h4>
+				<h4>Registro de nuevas categorias de productos</h4>
 			</div>
 			<div class="panel-body">
 				<div class="row">
@@ -20,10 +20,8 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 						<input type="hidden" value="<?= csrf_token() ?>" name="csrftoken" required>
 						<div class="col-lg-6">
 							<div class="form-group">
-								<label>Categoria de Producto  <span style="color: red">*</span></label>
-								<select class="form-control">
-								
-								</select>
+								<label>Nombre de la categoria  <span style="color: red">*</span></label>
+								<input type="text" name="" class="form-control" placeholder="Ej: Productos de oficina">
 							</div>
 						</div>
 						<div class="col-lg-6">

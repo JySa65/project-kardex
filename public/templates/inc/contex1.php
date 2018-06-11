@@ -21,8 +21,8 @@
 					<?= strtoupper(sessionLocal('user')->username);?><i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
 				</a>
 				<ul class="dropdown-menu dropdown-user">
-					<li><a href="#"><i class="fa fa-gear fa-fw"></i>Cambio de Clave</a>
-					</li>
+					<li><a href="#"><i class="fa fa-gear fa-fw"></i>Cambio de Clave</a></li>
+					<li><a href="#"><i class="fa fa-file fa-fw"></i>Documentacion</a></li>
 					<li class="divider"></li>
 					<li><a href="<?= url('logout') ?>"><i class="fa fa-sign-out fa-fw"></i>Cerrar Sesi&oacute;n</a>
 					</li>
@@ -38,7 +38,7 @@
 				<ul class="nav" id="side-menu">
 				</li>
 				<li class="active">
-					<a href="<?= url('dashboard'); ?>" class="active"><i class="fa fa-dashboard fa-fw"></i> Panel de control</a>
+					<a href="<?= url('dashboard'); ?>" class="active"><i class="fa fa-dashboard fa-fw"></i>Panel de control</a>
 				</li>
 				<li>
 					<a href="#!" class="active"><i class="fa fa-users fa-fw"></i>Registros</a>
@@ -47,16 +47,20 @@
 							<a href="<?= url('account/new') ?>" class="active">Usuario</a>
 						</li>
 						<li>
-							<a href="<?= url('product/new') ?>" class="active">Producto</a>
-						</li>
-						<li>
 							<a href="<?= url('cat_product/new') ?>" class="active">Categoria de producto</a>
 						</li>
 						<li>
-							<a href="<?= url('institucions/new')  ?>" class="active"> Instituciones</a>
+							<a href="<?= url('product/new') ?>" class="active">Producto</a>
+						</li>
+						
+						<li>
+							<a href="<?= url('institucions/new')  ?>" class="active">Instituciones</a>
 						</li>
 						<li>
-							<a href="<? url('') ?>" class="active"></a>
+							<a href="<?= url('motivo_entrada/new') ?>" class="active">Motivos de entrada</a>
+						</li>
+						<li>
+							<a href="<?= url('motivo_salida/new') ?>" class="active">Motivos de Salidas</a>
 						</li>
 					</ul>
 				</li>
