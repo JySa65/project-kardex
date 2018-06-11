@@ -8,6 +8,7 @@ new Routes([
 	"login/" => "LoginController",
 	"dashboard/" => "DashBoardController",
 	"account" => "AccountController",
+	"product" => "ProductController",
 	"logout" => "LogoutController",
 ])
 

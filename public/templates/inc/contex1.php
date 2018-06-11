@@ -49,6 +49,15 @@
 						<li>
 							<a href="<?= url('product/new') ?>" class="active">Producto</a>
 						</li>
+						<li>
+							<a href="<?= url('cat_product/new') ?>" class="active">Categoria de producto</a>
+						</li>
+						<li>
+							<a href="<?= url('institucions/new')  ?>" class="active"> Instituciones</a>
+						</li>
+						<li>
+							<a href="<? url('') ?>" class="active"></a>
+						</li>
 					</ul>
 				</li>
 				<li>
