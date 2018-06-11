@@ -4,7 +4,7 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 ?>
 <div class="row">
 	<div class="col-lg-12">
-		<h1 class="page-header">Productos | <a href="<?= url('dashboard') ?>" class="btn btn-success"><i class="fa fa-reply"></i> Regresar</a></h1>
+		<h1 class="page-header">Instituciones | <a href="<?= url('dashboard') ?>" class="btn btn-success"><i class="fa fa-reply"></i> Regresar</a></h1>
 	</div>
 </div>
 
@@ -12,7 +12,7 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 	<div class="col-lg-12">
 		<div class="panel panel-success">
 			<div class="panel-heading">
-				<h4>Registro de nuevos ingresos de productos</h4>
+				<h4>Registro de nuevas Instituciones</h4>
 			</div>
 			<div class="panel-body">
 				<div class="row">
@@ -20,30 +20,45 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 						<input type="hidden" value="<?= csrf_token() ?>" name="csrftoken" required>
 						<div class="col-lg-6">
 							<div class="form-group">
-								<label>Categoria de Producto  <span style="color: red">*</span></label>
-								<select class="form-control"  required>
-									<option value="">Seleccione la categoria correspondiente</option>
-								</select>
-							</div>
-						</div>
-						<div class="col-md-6">
-							<div class="form-group">
-								<label>Nombre del producto <span style="color: red">*</span></label>
+								<label>Nombre de la institucion <span style="color: red">*</span></label>
 								<input type="text" name="" class="form-control" placeholder="" required>
 							</div>
 						</div>
 						<div class="col-lg-6">
 							<div class="form-group">
-								<label>Cantidad del producto a ingresar <span style="color: red">*</span></label>
+								<label>Descripcion del la institucion</label>
+								<input type="text" name="" class="form-control" placeholder="Breve Descripcion de la isntitucion">
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="form-group">
+								<label>RIF de la institucion <span style="color: red">*</span></label>
 								<input type="number" min="1" name="" class="form-control" required>
 							</div>
 						</div>
 						<div class="col-lg-6">
 							<div class="form-group">
-								<label>Descripcion del producto</label>
-								<input type="text" name="" class="form-control" placeholder="Breve Descripcion del producto/S">
+								<label>Direccion de la institucion <span style="color: red">*</span></label>
+								<input type="text" name="" class="form-control" placeholder="">
 							</div>
-						</div>	
+						</div>
+						<div class="col-lg-6">
+							<div class="form-group">
+								<label>Telefono de la instituci&oacute;n <span style="color: red">*</span></label>
+								<br>
+								<div class="col-lg-3">
+									<input type="number" min="4" name="" class="form-control" placeholder="Codigo" required>
+								</div>
+								<div class="col-lg-6">
+									<input type="number" name="" class="form-control" placeholder="Numero" required>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="form-group">
+								<label>Direccion de la institucion <span style="color: red">*</span></label>
+								<input type="text" name="" class="form-control" placeholder="">
+							</div>
 						</div>
 						<div class="col-lg-12">
 							<p>(<span style="color: red">*</span>) Campos obligatorios</p>

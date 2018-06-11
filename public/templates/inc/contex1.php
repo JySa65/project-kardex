@@ -65,7 +65,7 @@
 					</ul>
 				</li>
 				<li>
-					<a href="<?= url('vehicle'); ?>" class="active"><i class="fa fa-car fa-fw"></i> Listados</a>
+					<a href="<?= url('list'); ?>" class="active"><i class="fa fa-car fa-fw"></i> Listados</a>
 				</li>
 				<li>
 					<a href="#" class="active"><i class="fa fa-university fa-fw"></i> Reportes</a>
