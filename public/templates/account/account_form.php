@@ -50,7 +50,7 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 						<div class="col-lg-6">
 							<div class="form-group">
 								<label for="id_cedula">Cedula</label>
-								<input class="form-control" id="id_cedula" name="cedula" type="text" placeholder="Cedula" maxlength="8" autocomplete="off" pattern="[0-9]{0,8}" oninvalid="setCustomValidity('la cedula debe ser numerica')" required value="<?= isset($user) ? $user->cedula : '' ?>">
+								<input class="form-control solonumeros" id="id_cedula" name="cedula" type="text" placeholder="Cedula" maxlength="8" autocomplete="off" pattern="[0-9]{0,8}" oninvalid="setCustomValidity('la cedula debe ser numerica')" required value="<?= isset($user) ? $user->cedula : '' ?>">
 							</div>
 						</div>
 						<div class="col-lg-6">
