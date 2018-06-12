@@ -29,3 +29,7 @@ body{
 	background-color: #222;
 }
 
+.nav .open>a,.nav .open>a:focus,.nav .open>a:hover{
+	background-color:#212121;
+	border-color:#337ab7;
+}
