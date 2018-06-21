@@ -36,6 +36,15 @@
     </div>
 		</div>
 		</nav>
+    <br><br>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          
+          
+        </div>  
+      </div>
+    </div>
 <?php 
 @include (TEMPLATES_DIR . "templates/inc/footer.php");
  ?>
