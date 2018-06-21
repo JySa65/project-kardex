@@ -21,13 +21,13 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 						<div class="col-lg-6">
 							<div class="form-group">
 								<label>Nombre del motivo de salida <span style="color: red">*</span></label>
-								<input type="text" name="" class="form-control" placeholder="Ej: Traspaso de terceros">
+								<input type="text" onkeypress="return sololetras(event)" name="" class="form-control" placeholder="Ej: Traspaso de terceros">
 							</div>
 						</div>
 						<div class="col-lg-6">
 							<div class="form-group">
 								<label>Descripci&oacute;n</label>
-								<input type="text" name="" class="form-control" placeholder="Breve Descripcion del motivo">
+								<input type="text" onkeypress="return sololetras(event)" name="" class="form-control" placeholder="Breve Descripcion del motivo">
 							</div>
 						</div>
 						<div class="col-lg-12">
@@ -36,7 +36,7 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 
 						<div class="col-lg-12 text-center">
 							<div class="form-group">
-								<button class="btn btn-primary "><i class="fa fa-save"></i> Aceptar</button>
+								<button class="btn btn-primary " type="submit"><i class="fa fa-save"></i> Aceptar</button>
 								<button class="btn btn-warning " type="reset"><i class="fa fa-recycle"></i> Limpiar</button>
 							</div>
 						</div>

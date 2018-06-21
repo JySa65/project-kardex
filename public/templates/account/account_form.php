@@ -31,19 +31,19 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 						<div class="col-lg-6">
 							<div class="form-group">
 								<label for="id_cedula">Cedula</label>
-								<input class="form-control" id="id_cedula" name="cedula" type="number" placeholder="Cedula" min="1" maxlength="8" onkeypress="return patron(e)" autocomplete="off" required value="<?= isset($user) ? $user->cedula : '' ?>">
+								<input class="form-control" id="id_cedula" name="cedula" type="number" placeholder="Cedula" min="1" maxlength="8" onkeypress="return solonumeros(event)" autocomplete="off" required value="<?= isset($user) ? $user->cedula : '' ?>">
 							</div>
 						</div>
 						<div class="col-lg-6">
 							<div class="form-group">
 								<label for="id_name">Nombre</label>
-								<input class="form-control" id="id_name" name="name" type="text" placeholder="Primer Nombre" maxlength=15 autocomplete="off" pattern="[a-zA-Z]" required value="<?= isset($user) ? $user->name : '' ?>">
+								<input class="form-control" id="id_name" name="name" type="text" placeholder="Primer Nombre" maxlength=15 autocomplete="off" onkeypress="return sololetras(event)" required value="<?= isset($user) ? $user->name : '' ?>">
 							</div>
 						</div>
 						<div class="col-lg-6">
 							<div class="form-group">
 								<label for="id_last_name">Apellido</label>
-								<input class="form-control sololetras" id="id_last_name" name="last_name" type="text" placeholder=" Primer Apellido" maxlength="50" autocomplete="off" pattern="[a-zA-Z]" required value="<?= isset($user) ? $user->last_name : '' ?>">
+								<input class="form-control" id="id_last_name" name="last_name" type="text" placeholder=" Primer Apellido" maxlength="15" onkeypress="return sololetras(event)" autocomplete="off" required value="<?= isset($user) ? $user->last_name : '' ?>">
 							</div>
 						</div>
 						<div class="col-lg-6">
@@ -109,20 +109,6 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 		</div>
 	</div>
 </div>
-<script>
-	var input = $("input[type='text']")
-	if(input){
-		for(i=0; i<input.length; i++){
-			input[i].onkeypress = function(e){
-				tecla = (document.all) ? e.keyCode : e.which;
-				if (tecla==8) return true;
-				patron =/[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+/;
-				te = String.fromCharCode(tecla);
-				return patron.test(te);
-			}
-		}
-	}
-</script>
 <?php
 @include(TEMPLATES_DIR . "templates/inc/contex2.php");
 @include(TEMPLATES_DIR . "templates/inc/footer.php");
