@@ -3,7 +3,7 @@ use framework\basedatos\Conection;
 namespace framework\basedatos;
 class ORMysql extends Conection
 {
-	protected static $table;
+    protected static $table;
 
     public function save()
     {
@@ -34,7 +34,7 @@ class ORMysql extends Conection
             $query = "INSERT INTO " . static ::$table . " ($columns) VALUES ($params)";
         }
         try {
-            $pre = $this->getconn()->prepare($query);
+            $pre = $this->getconn()->prepare($query); 
             $a_params = [""];
             $arg = array_values($filtered);
             for ($i=0; $i < count($arg); $i++) { 
@@ -129,6 +129,53 @@ class ORMysql extends Conection
         }else{
             return false;
         }
+    }
+
+    public function paginate($x_page = null)
+    {
+        $table = static::$table;
+        if ($x_page == null) {
+            $x_page = 10;
+        }
+
+        if (isset($_GET['page'])) {
+            $page = $_GET['page'];
+        }else{
+            $page = 1;
+        }
+
+        $total = ($page-1) * $x_page;
+        $query = "SELECT * FROM {$table} LIMIT {$total}, {$x_page}";
+        $class = get_called_class();
+        $pre = $this->getconn()->prepare($query);
+        $pre->execute();
+        $result = $pre->get_result();
+        $obj = [];
+        while ($row = $result->fetch_assoc()){
+            $obj[] = new $class($row);
+        }  
+        self::destroy();
+        $pagina = self::paginate_template($x_page);
+        return [$obj, $pagina];
+    }
+
+    private function paginate_template($num_registros)
+    {
+        $data = count(self::all());
+        $total_paginas = ceil($data / $num_registros);
+        return $total_paginas;
+    }
+
+    public function execute_query($query)
+    {
+        $class = get_called_class();
+        $pre = $this->getconn()->query($query);
+        $obj = [];
+        while ($row = $pre->fetch_object()){
+            $obj[] = $row;
+        }  
+        self::destroy();
+        return $obj;
     }
 
 }
