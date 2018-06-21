@@ -13,6 +13,7 @@ class AccountController extends View
 
 	function new()
 	{
+		
 		if($_SERVER['REQUEST_METHOD'] === "GET"){
 			return $this->render('account/account_form');
 		}else if($_SERVER['REQUEST_METHOD'] === "POST") {
