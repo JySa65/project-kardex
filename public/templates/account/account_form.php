@@ -54,25 +54,25 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 						</div>
 						<div class="col-lg-6">
 							<div class="form-group">
-								<label for="id_nacionality">Nivel de Acceso</label>
-								<select name="nacionality" id="id_nacionality" class="form-control" autofocus="on" autocomplete="off" required value="">
+								<label for="id_level">Nivel de Acceso</label>
+								<select name="level" id="id_level" class="form-control" autofocus="on" autocomplete="off" required value="">
 										<option value="" selected="">Escojer Nivel</option>
-										<option value="Administrador">Administrador</option>
-										<option value="Supervisor">Supervisor</option>
-										<option value="Trabajador">Trabajador</option>
+										<option value="administrador">Administrador</option>
+										<option value="supervisor">Supervisor</option>
+										<option value="trabajador">Trabajador</option>
 								</select>
 							</div>
 						</div>
 						<div class="col-lg-6">
 							<div class="form-group">
-								<label for="id_email">Direccion</label>
+								<label for="id_address">Direccion</label>
 								<textarea name="address" id="id_address" cols="30" rows="1" class="form-control" style="overflow:auto; height: 50%;" placeholder="Direccion"><?= isset($user) ? $user->address : '' ?></textarea>
 							</div>
 						</div>
 						<div class="col-lg-6">
 							<div class="form-group">
-								<label for="id_email">Contraseña</label>
-								<input class="form-control" id="id_email" name="email" type="password" placeholder="" maxlength="8" autocomplete="off">
+								<label for="id_password">Contraseña</label>
+								<input class="form-control" id="id_password" name="password" type="password" placeholder="" maxlength="8" autocomplete="off">
 							</div>
 						</div>
 						<div class="col-lg-12">
