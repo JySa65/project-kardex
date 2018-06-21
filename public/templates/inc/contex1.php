@@ -68,7 +68,10 @@
 					<a href="<?= url('list'); ?>" class="active"><i class="fa fa-car fa-fw"></i> Listados</a>
 					<ul class="nav nav-second-level">
 						<li>
-							<a href="<?= url('list_account'); ?>" class="active">Usuarios</a>
+							<a href="<?= url('list_account') ?>" class="active">Usuarios</a>
+						</li>
+						<li>
+							<a href="<?= url('list_category')?>"></a>
 						</li>
 						
 					</ul>

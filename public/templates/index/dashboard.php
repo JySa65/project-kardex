@@ -21,7 +21,7 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 					</div>
 				</div>
 			</div>
-			<a href="#">
+			<a href="<?=url('list_account')?>">
 				<div class="panel-footer">
 					<span class="pull-left">Ver Listado</span>
 					<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -45,7 +45,7 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 			</div>
 			<a href="#">
 				<div class="panel-footer">
-					<span class="pull-left">View Listado</span>
+					<span class="pull-left">Ver Listado</span>
 					<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
 					<div class="clearfix"></div>
 				</div>
