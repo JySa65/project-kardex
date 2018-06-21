@@ -2,6 +2,9 @@
 /**
  * 
  */
+if (!is_authenticated()) {
+	return redirect('login');
+}
 use framework\view\View;
 use app\models\AccountModel;
 use app\databases\AccountBD;
