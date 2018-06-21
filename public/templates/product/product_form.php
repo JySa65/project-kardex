@@ -21,61 +21,58 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 						<div class="col-lg-6">
 							<div class="form-group">
 								<label>Categoria de Producto  <span style="color: red">*</span></label>
-								<select class="form-control"  required>
-									<option value="">Seleccione la categoria correspondiente</option>
+								<select name="category" id="id_category" autocomplete="off" required class="form-control">
+									<option value="">Seleccione Catgoria <span class="ast-input">*</span></option>
+									<?php foreach ($categorys as $category) {?>
+										<option value="<?= $category->id ?>"><?= $category->name ?></option>
+									<?php } ?>
 								</select>
 							</div>
 						</div>
 						<div class="col-md-6">
 							<div class="form-group">
 								<label>Nombre del producto <span style="color: red">*</span></label>
-								<input type="text" name="" class="form-control" onkeypress="return sololetras(event)" placeholder="Ej: Inyectadora" required>
+								<input type="text" name="name" id="id_name" class="form-control" onkeypress="return sololetras(event)" placeholder="Ej: Inyectadora" required>
 							</div>
-						</div>
-						<div class="col-lg-6">
-							<div class="form-group">
-								<label>Cantidad del producto a ingresar <span style="color: red">*</span></label>
-								<input type="number" min="1" name="" class="form-control" required>
-							</div>
-						</div>
-						<div class="col-lg-6">
-							<div class="form-group">
-								<label>Descripcion del producto</label>
-								<input type="text" name="" class="form-control" onkeypress="return sololetras(event)" placeholder="Breve Descripcion del producto/S">
-							</div>
-						</div>	
 						</div>
 						<div class="col-lg-12">
-							<p>(<span style="color: red">*</span>) Campos obligatorios</p>
-						</div>
-
-						<div class="col-lg-12 text-center">
 							<div class="form-group">
-								<button class="btn btn-primary "><i class="fa fa-save"></i> Aceptar</button>
-								<button class="btn btn-warning "><i class="fa fa-recycle"></i> Limpiar</button>
+								<label>Descripcion del producto</label>
+								<input type="text" name="description" id="id_description" class="form-control" onkeypress="return sololetras(event)" placeholder="Breve Descripcion del producto/S">
 							</div>
-						</div>
-					</form>
-				</div>                      
-			</div>	
-			<?php if (SESSION::has('error')) { ?>
-				<div class="panel-footer panel-danger">
-					<div class="alert alert-danger alert-dismissable">
-						<ul>
-							<?php 
-							if (is_array($_SESSION['error'])) {
-								foreach (SESSION::get('error') as $value) { ?>
-									<li class="h5"><?= $value ?></li>	
-								<?php }
-							}else{ ?>
-								<li class="h5"><?= SESSION::get('error') ?></li>
-							<?php } ?>	
-						</ul>
+						</div>	
 					</div>
+					<div class="col-lg-12">
+						<p>(<span style="color: red">*</span>) Campos obligatorios</p>
+					</div>
+
+					<div class="col-lg-12 text-center">
+						<div class="form-group">
+							<button class="btn btn-primary" type="submit"><i class="fa fa-save"></i> Aceptar</button>
+							<button class="btn btn-warning" type="reset"><i class="fa fa-recycle"></i> Limpiar</button>
+						</div>
+					</div>
+				</form>
+			</div>                      
+		</div>	
+		<?php if (SESSION::has('error')) { ?>
+			<div class="panel-footer panel-danger">
+				<div class="alert alert-danger alert-dismissable">
+					<ul>
+						<?php 
+						if (is_array($_SESSION['error'])) {
+							foreach (SESSION::get('error') as $value) { ?>
+								<li class="h5"><?= $value ?></li>	
+							<?php }
+						}else{ ?>
+							<li class="h5"><?= SESSION::get('error') ?></li>
+						<?php } ?>	
+					</ul>
 				</div>
-			<?php } ?>
-		</div>
+			</div>
+		<?php } ?>
 	</div>
+</div>
 </div>
 
 

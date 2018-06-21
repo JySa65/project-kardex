@@ -10,7 +10,7 @@ new Routes([
 	"account" => "register/AccountController",
 	"cat_product" => "register/CategoryProductController",
 	"product" => "register/ProductController",
-	"institucions" => "InstitucionController",
+	"institucions" => "register/InstitucionController",
 	"motivo_entrada" => "MotEController",
 	"motivo_salida" => "MotSController",
 	"list" => "ListController",

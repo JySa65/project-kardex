@@ -21,25 +21,25 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 						<div class="col-lg-6">
 							<div class="form-group">
 								<label>Nombre de la institucion <span style="color: red">*</span></label>
-								<input type="text" name="" class="form-control" placeholder="Ej: Hospital Miguel Oraa" onkeypress="return sololetras(event)" required>
+								<input type="text" name="name" id="id_name" class="form-control" placeholder="Ej: Hospital Miguel Oraa" onkeypress="return sololetras(event)" required>
 							</div>
 						</div>
 						<div class="col-lg-6">
 							<div class="form-group">
 								<label>Descripcion del la institucion</label>
-								<input type="text" name="" class="form-control" onkeypress="return sololetras(event)" placeholder="Breve Descripcion de la isntitucion">
+								<input type="text" name="description" id="id_description" class="form-control" onkeypress="return sololetras(event)" placeholder="Breve Descripcion de la isntitucion">
 							</div>
 						</div>
 						<div class="col-lg-6">
 							<div class="form-group">
 								<label>RIF de la institucion <span style="color: red">*</span></label>
-								<input type="number" min="1" name="" class="form-control" placeholder="Ej: J0000000" required>
+								<input type="number" min="1" name="rif" id="id_rif" class="form-control" placeholder="Ej: J0000000" required>
 							</div>
 						</div>
 						<div class="col-lg-6">
 							<div class="form-group">
 								<label>Direccion de la institucion <span style="color: red">*</span></label>
-								<input type="text" name="" class="form-control" placeholder="">
+								<input type="text" name="address" id="id_address" class="form-control" placeholder="">
 							</div>
 						</div>
 						<div class="col-lg-6">
@@ -47,10 +47,10 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 								<label>Telefono de la instituci&oacute;n <span style="color: red">*</span></label>
 								<br>
 								<div class="col-lg-3">
-									<input type="number" min="1" autocomplete="off" name="" class="form-control" placeholder="Codigo" required>
+									<input type="number" min="1" autocomplete="off" name="tlf_part1" id="id_tlf_part1" class="form-control" placeholder="Codigo" required>
 								</div>
 								<div class="col-lg-6">
-									<input type="number" name="" autocomplete="off" class="form-control" placeholder="Numero" required>
+									<input type="number" name="tlf_part2" id="id_tlf_part2" autocomplete="off" class="form-control" placeholder="Numero" required>
 								</div>
 							</div>
 						</div>
