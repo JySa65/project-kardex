@@ -34,35 +34,20 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 						</div>
 						<div class="col-lg-6">
 							<div class="form-group">
-								<label for="id_nacionality">Nivel de Acceso</label>
-								<select name="nacionality" id="id_nacionality" class="form-control" autofocus="on" autocomplete="off" required value="">
-									<?php if (isset($user)){ 
-										echo "<option selected value=" . $user->nationality . ">". $user->nationality ."</option>"; 
-									}else{ ?>
-										<option value="" selected="">Escojer Nivel</option>
-										<option value="1">Administrador</option>
-										<option value="2">Supervisor</option>
-										<option value="3">Trabajador</option>
-									<?php } ?>
-								</select>
-							</div>
-						</div>
-						<div class="col-lg-6">
-							<div class="form-group">
 								<label for="id_cedula">Cedula</label>
-								<input class="form-control" id="id_cedula" name="cedula" type="number" placeholder="Cedula" min="1" max="99999999" autocomplete="off" required value="<?= isset($user) ? $user->cedula : '' ?>">
+								<input class="form-control" id="id_cedula" name="cedula" type="number" placeholder="Cedula" min="1" maxlength="8" onkeypress="return patron(e)" autocomplete="off" required value="<?= isset($user) ? $user->cedula : '' ?>">
 							</div>
 						</div>
 						<div class="col-lg-6">
 							<div class="form-group">
 								<label for="id_name">Nombre</label>
-								<input class="form-control" id="id_name" name="name" type="text" placeholder="Primer Nombre" maxlength="50" autocomplete="off" pattern="[a-zA-Z]" required value="<?= isset($user) ? $user->name : '' ?>">
+								<input class="form-control" id="id_name" name="name" type="text" placeholder="Primer Nombre" maxlength=15 autocomplete="off" pattern="[a-zA-Z]" required value="<?= isset($user) ? $user->name : '' ?>">
 							</div>
 						</div>
 						<div class="col-lg-6">
 							<div class="form-group">
 								<label for="id_last_name">Apellido</label>
-								<input class="form-control" id="id_last_name" name="last_name" type="text" placeholder=" Primer Apellido" maxlength="50" autocomplete="off" pattern="[a-zA-Z]" required value="<?= isset($user) ? $user->last_name : '' ?>">
+								<input class="form-control sololetras" id="id_last_name" name="last_name" type="text" placeholder=" Primer Apellido" maxlength="50" autocomplete="off" pattern="[a-zA-Z]" required value="<?= isset($user) ? $user->last_name : '' ?>">
 							</div>
 						</div>
 						<div class="col-lg-6">
@@ -71,10 +56,31 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 								<input class="form-control" id="id_email" name="email" type="email" placeholder="Correo Electronico" maxlength="255" autocomplete="off" value="<?= isset($user) ? $user->email : '' ?>">
 							</div>
 						</div>
-						<div class="col-lg-12">
+						<div class="col-lg-6">
+							<div class="form-group">
+								<label for="id_nacionality">Nivel de Acceso</label>
+								<select name="nacionality" id="id_nacionality" class="form-control" autofocus="on" autocomplete="off" required value="">
+									<?php if (isset($user)){ 
+										echo "<option selected value=" . $user->nationality . ">". $user->nationality ."</option>"; 
+									}else{ ?>
+										<option value="" selected="">Escojer Nivel</option>
+										<option value="Administrador">Administrador</option>
+										<option value="Supervisor">Supervisor</option>
+										<option value="Trabajador">Trabajador</option>
+									<?php } ?>
+								</select>
+							</div>
+						</div>
+						<div class="col-lg-6">
 							<div class="form-group">
 								<label for="id_email">Direccion</label>
 								<textarea name="address" id="id_address" cols="30" rows="1" class="form-control" style="overflow:auto; height: 50%;" placeholder="Direccion"><?= isset($user) ? $user->address : '' ?></textarea>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="form-group">
+								<label for="id_email">Contraseña</label>
+								<input class="form-control" id="id_email" name="email" type="password" placeholder="" maxlength="8" autocomplete="off">
 							</div>
 						</div>
 						<div class="col-lg-12">
@@ -85,8 +91,8 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 
 						<div class="col-lg-12 text-center">
 							<div class="form-group">
-								<button class="btn btn-primary "><i class="fa fa-save"></i> Aceptar</button>
-								<button class="btn btn-warning "><i class="fa fa-recycle"></i> Limpiar</button>
+								<button class="btn btn-primary " type="submit"><i class="fa fa-save"></i> Aceptar</button>
+								<button class="btn btn-warning " type="reset"><i class="fa fa-recycle"></i> Limpiar</button>
 							</div>
 						</div>
 					</form>
@@ -111,8 +117,20 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 		</div>
 	</div>
 </div>
-
-
+<script>
+var input = $("input[type='text']")
+  if(input){
+    for(i=0; i<input.length; i++){
+      input[i].onkeypress = function(e){
+        tecla = (document.all) ? e.keyCode : e.which;
+        if (tecla==8) return true;
+        patron =/[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+/;
+        te = String.fromCharCode(tecla);
+        return patron.test(te);
+      }
+    }
+  }
+</script>
 <?php
 @include(TEMPLATES_DIR . "templates/inc/contex2.php");
 @include(TEMPLATES_DIR . "templates/inc/footer.php");
