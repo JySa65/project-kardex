@@ -36,6 +36,22 @@
     </div>
 		</div>
 		</nav>
+    <br><br>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12" style="text-align: justify;">
+          <center><h3>MISIÓN</h3></center>
+          <p>
+            La Dirección Estadal de salud, Organismo rector del Sistema Integral de Salud, fundamentada en los principios éticos y valores institucionales con el propósito de promocionar, reservar, defender y restituir la salud, a través de acciones estratégicas basadas en liderizar y gerenciar planes, programas y proyectos acorde con las necesidades propias de la organización y de la colectividad para mejorar la calidad debida.
+          </p>
+          <center><h3>VISIÓN</h3></center>
+          <p>
+            La Dirección Estadal de salud, Consolida como la organización descentralizada rectora de los servicios de la Salud y el desarrollo social, como autonomía Administrativa, Financiera y el Recurso Humano idóneo para garantizar el bienestar con la participación de la comunidad.
+          </p>
+        </div>  
+      </div>
+    </div>
+    <br>
 <?php 
 @include (TEMPLATES_DIR . "templates/inc/footer.php");
  ?>
