@@ -47,7 +47,7 @@ class AccountController extends View
 
 			}
 		}else{
-			// return redirect('account/new', ['error' => $this->error]);
+			return redirect('account/new', ['error' => $this->error]);
 		}
 	}
 
@@ -82,9 +82,7 @@ class AccountController extends View
 			array_push($this->error, "El Campo email no es correcto");	
 		}
 		foreach ($data_len as $value) {
-			$dat = strlen($value);
-			echo "{$value} = {$dat} <br>";
-			if (strlen($value) < 7) {
+			if (strlen($_POST[$value]) < 7) {
 				array_push($this->error, "La logitud del campo {$data[$value]} es muy corto mayor o igual 7");		
 			}
 		}

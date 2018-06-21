@@ -45,7 +45,7 @@ class LoginController
 							if (isset($body['username']) && isset($body['password'])) {
 								if (test_text_number($body['username'])) {
 									$model = new AccountModel;
-									$user = $model->find('username', '=', test_input($body['username']));
+									$user = $model->find('cedula', '=', test_input($body['username']));
 									if ($user) {
 										if ($user->password == encrypt($body['password'])) {
 											sessionLocal('is_authenticated', true);

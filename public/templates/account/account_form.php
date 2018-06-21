@@ -56,10 +56,10 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 							<div class="form-group">
 								<label for="id_level">Nivel de Acceso</label>
 								<select name="level" id="id_level" class="form-control" autofocus="on" autocomplete="off" required value="">
-										<option value="" selected="">Escojer Nivel</option>
-										<option value="administrador">Administrador</option>
-										<option value="supervisor">Supervisor</option>
-										<option value="trabajador">Trabajador</option>
+									<option value="" selected="">Escojer Nivel</option>
+									<option value="administrador">Administrador</option>
+									<option value="supervisor">Supervisor</option>
+									<option value="trabajador">Trabajador</option>
 								</select>
 							</div>
 						</div>
