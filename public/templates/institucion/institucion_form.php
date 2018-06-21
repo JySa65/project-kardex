@@ -21,7 +21,7 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 						<div class="col-lg-6">
 							<div class="form-group">
 								<label>Nombre de la institucion <span style="color: red">*</span></label>
-								<input type="text" name="" class="form-control" onkeypress="return sololetras(event)" required>
+								<input type="text" name="" class="form-control" placeholder="Ej: Hospital Miguel Oraa" onkeypress="return sololetras(event)" required>
 							</div>
 						</div>
 						<div class="col-lg-6">
@@ -33,7 +33,7 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 						<div class="col-lg-6">
 							<div class="form-group">
 								<label>RIF de la institucion <span style="color: red">*</span></label>
-								<input type="number" min="1" name="" class="form-control" required>
+								<input type="number" min="1" name="" class="form-control" placeholder="Ej: J0000000" required>
 							</div>
 						</div>
 						<div class="col-lg-6">
@@ -47,19 +47,14 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 								<label>Telefono de la instituci&oacute;n <span style="color: red">*</span></label>
 								<br>
 								<div class="col-lg-3">
-									<input type="number" min="4" autocomplete="off" name="" class="form-control" placeholder="Codigo" required>
+									<input type="number" min="1" autocomplete="off" name="" class="form-control" placeholder="Codigo" required>
 								</div>
 								<div class="col-lg-6">
 									<input type="number" name="" autocomplete="off" class="form-control" placeholder="Numero" required>
 								</div>
 							</div>
 						</div>
-						<div class="col-lg-6">
-							<div class="form-group">
-								<label>Direccion de la institucion <span style="color: red">*</span></label>
-								<input type="text" name="" class="form-control" placeholder="">
-							</div>
-						</div>
+						
 						<div class="col-lg-12">
 							<p>(<span style="color: red">*</span>) Campos obligatorios</p>
 						</div>

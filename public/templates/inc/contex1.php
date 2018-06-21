@@ -57,15 +57,21 @@
 							<a href="<?= url('institucions/new')  ?>" class="active">Instituciones</a>
 						</li>
 						<li>
-							<a href="<?= url('motivo_entrada/new') ?>" class="active">Motivos de entrada</a>
+							<a href="<?= url('motivo_entrada/new') ?>" class="active">Conceptos de entrada</a>
 						</li>
 						<li>
-							<a href="<?= url('motivo_salida/new') ?>" class="active">Motivos de Salidas</a>
+							<a href="<?= url('motivo_salida/new') ?>" class="active">Conceptos de Salidas</a>
 						</li>
 					</ul>
 				</li>
 				<li>
 					<a href="<?= url('list'); ?>" class="active"><i class="fa fa-car fa-fw"></i> Listados</a>
+					<ul class="nav nav-second-level">
+						<li>
+							<a href="<?= url('list_account'); ?>" class="active">Usuarios</a>
+						</li>
+						
+					</ul>
 				</li>
 				<li>
 					<a href="#" class="active"><i class="fa fa-university fa-fw"></i> Reportes</a>

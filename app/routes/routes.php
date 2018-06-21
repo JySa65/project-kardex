@@ -15,6 +15,7 @@ new Routes([
 	"motivo_salida" => "MotSController",
 	"list" => "ListController",
 	"logout" => "LogoutController",
+	"list_account" => "list/ListAccountController",
 ])
 
 

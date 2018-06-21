@@ -29,7 +29,7 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 						<div class="col-md-6">
 							<div class="form-group">
 								<label>Nombre del producto <span style="color: red">*</span></label>
-								<input type="text" name="" class="form-control" onkeypress="return sololetras(event)" required>
+								<input type="text" name="" class="form-control" onkeypress="return sololetras(event)" placeholder="Ej: Inyectadora" required>
 							</div>
 						</div>
 						<div class="col-lg-6">

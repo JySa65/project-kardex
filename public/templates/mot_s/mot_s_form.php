@@ -4,7 +4,7 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 ?>
 <div class="row">
 	<div class="col-lg-12">
-		<h1 class="page-header">Motivos de Salida | <a href="<?= url('dashboard') ?>" class="btn btn-success"><i class="fa fa-reply"></i> Regresar</a></h1>
+		<h1 class="page-header">Conceptos de Salida | <a href="<?= url('dashboard') ?>" class="btn btn-success"><i class="fa fa-reply"></i> Regresar</a></h1>
 	</div>
 </div>
 
@@ -12,7 +12,7 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 	<div class="col-lg-12">
 		<div class="panel panel-success">
 			<div class="panel-heading">
-				<h4>Registro de nuevos motivos de salida de productos</h4>
+				<h4>Registro de nuevos conceptos de salida de productos</h4>
 			</div>
 			<div class="panel-body">
 				<div class="row">
@@ -20,14 +20,14 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 						<input type="hidden" value="<?= csrf_token() ?>" name="csrftoken" required>
 						<div class="col-lg-6">
 							<div class="form-group">
-								<label>Nombre del motivo de salida <span style="color: red">*</span></label>
+								<label>Nombre del concepto de salida <span style="color: red">*</span></label>
 								<input type="text" onkeypress="return sololetras(event)" name="" class="form-control" placeholder="Ej: Traspaso de terceros">
 							</div>
 						</div>
 						<div class="col-lg-6">
 							<div class="form-group">
 								<label>Descripci&oacute;n</label>
-								<input type="text" onkeypress="return sololetras(event)" name="" class="form-control" placeholder="Breve Descripcion del motivo">
+								<input type="text" onkeypress="return sololetras(event)" name="" class="form-control" placeholder="Breve Descripcion del concepto">
 							</div>
 						</div>
 						<div class="col-lg-12">
