@@ -112,7 +112,18 @@ class ORMPostgres extends Conection
             return false;
         }
     }
-
+    public function execute_query($query)
+    {   
+        $this->getconn();
+        $class = get_called_class();
+        $pre = pg_query($query);
+        $obj = [];
+        while ($row = pg_fetch_object($pre)){
+            $obj[] = $row;
+        }  
+        self::destroy();
+        return $obj;
+    }
 }
 
 ?>
