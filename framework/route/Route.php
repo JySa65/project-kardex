@@ -71,9 +71,15 @@ class Routes
 		}else{
 			$methodController = $method;
 		}
+		$cont = $controller;
+		$controll = explode("/", $controller);
+		if (is_array($controll)) {
+			$ult = count($controll) -1;
+			$cont = $controll[$ult];
+		}
 		$this->joinController($controller);
-		if (class_exists($controller)) {
-			$classTemp = new $controller();
+		if (class_exists($cont)) {
+			$classTemp = new $cont();
 			if (is_callable(array($classTemp, $methodController))) {
 				if ($methodController == "index") {
 					if (count($params) == 0) {

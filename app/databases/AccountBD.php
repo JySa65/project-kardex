@@ -19,17 +19,14 @@ class AccountBD extends Conection
 
         CREATE TABLE IF NOT EXISTS account (
         id BIGSERIAL NOT NULL PRIMARY KEY,
-        username varchar(50) NOT NULL UNIQUE,
         nationality varchar(1) NOT NULL,
         cedula varchar(9) NOT NULL UNIQUE,
         name varchar(50),
         last_name varchar(50),
         password varchar(128) NOT NULL,
         email varchar(255) UNIQUE,
-        is_active boolean DEFAULT FALSE,
-        is_superuser boolean DEFAULT FALSE,
-        is_supervise boolean DEFAULT FALSE,
-        is_worker boolean DEFAULT FALSE,
+        address text,
+        level varchar(100) NOT NULL,
         created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
         updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP);
 

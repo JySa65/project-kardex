@@ -22,13 +22,9 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 							<div class="form-group">
 								<label for="id_nacionality">Nacionalidad</label>
 								<select name="nacionality" id="id_nacionality" class="form-control" autofocus="on" autocomplete="off" required value="">
-									<?php if (isset($user)){ 
-										echo "<option selected value=" . $user->nationality . ">". $user->nationality ."</option>"; 
-									}else{ ?>
-										<option value="" selected="">Escojer Nacionalidad</option>
-										<option value="V">V</option>
-										<option value="E">E</option>
-									<?php } ?>
+									<option value="" selected="">Escojer Nacionalidad</option>
+									<option value="V">V</option>
+									<option value="E">E</option>
 								</select>
 							</div>
 						</div>
@@ -36,14 +32,10 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 							<div class="form-group">
 								<label for="id_nacionality">Nivel de Acceso</label>
 								<select name="nacionality" id="id_nacionality" class="form-control" autofocus="on" autocomplete="off" required value="">
-									<?php if (isset($user)){ 
-										echo "<option selected value=" . $user->nationality . ">". $user->nationality ."</option>"; 
-									}else{ ?>
-										<option value="" selected="">Escojer Nivel</option>
-										<option value="1">Administrador</option>
-										<option value="2">Supervisor</option>
-										<option value="3">Trabajador</option>
-									<?php } ?>
+									<option value="" selected="">Escojer Nivel</option>
+									<option value="1">Administrador</option>
+									<option value="2">Supervisor</option>
+									<option value="3">Trabajador</option>
 								</select>
 							</div>
 						</div>
@@ -85,8 +77,8 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 
 						<div class="col-lg-12 text-center">
 							<div class="form-group">
-								<button class="btn btn-primary "><i class="fa fa-save"></i> Aceptar</button>
-								<button class="btn btn-warning "><i class="fa fa-recycle"></i> Limpiar</button>
+								<button class="btn btn-primary" type="submit"><i class="fa fa-save"></i> Aceptar</button>
+								<button class="btn btn-warning " type="reset"><i class="fa fa-recycle"></i> Limpiar</button>
 							</div>
 						</div>
 					</form>

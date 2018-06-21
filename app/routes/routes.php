@@ -7,7 +7,7 @@ new Routes([
 	"info" => "InfoController",
 	"login/" => "LoginController",
 	"dashboard/" => "DashBoardController",
-	"account" => "AccountController",
+	"account" => "account/AccountController",
 	"cat_product" => "CategoryProductController",
 	"product" => "ProductController",
 	"institucions" => "InstitucionController",
