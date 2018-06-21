@@ -21,13 +21,13 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 						<div class="col-lg-6">
 							<div class="form-group">
 								<label>Nombre de la categoria  <span style="color: red">*</span></label>
-								<input type="text" name="" class="form-control" placeholder="Ej: Productos de oficina">
+								<input type="text" name="" class="form-control" onkeypress="return sololetras(event)" placeholder="Ej: Productos de oficina">
 							</div>
 						</div>
 						<div class="col-lg-6">
 							<div class="form-group">
 								<label>Descripci&oacute;n</label>
-								<input type="text" name="" class="form-control" placeholder="Breve Descripcion de la categoria">
+								<input type="text" name="" class="form-control" onkeypress="return sololetras(event)" placeholder="Breve Descripcion de la categoria">
 							</div>
 						</div>
 						<div class="col-lg-12">
@@ -36,8 +36,8 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 
 						<div class="col-lg-12 text-center">
 							<div class="form-group">
-								<button class="btn btn-primary "><i class="fa fa-save"></i> Aceptar</button>
-								<button class="btn btn-warning "><i class="fa fa-recycle"></i> Limpiar</button>
+								<button class="btn btn-primary " type="submit"><i class="fa fa-save"></i> Aceptar</button>
+								<button class="btn btn-warning " type="reset"><i class="fa fa-recycle"></i> Limpiar</button>
 							</div>
 						</div>
 					</form>
