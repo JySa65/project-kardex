@@ -18,24 +18,24 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 						<thead>
 							<tr>
 								<th>#</th>
-								<th>Cedula</th>
-								<th>Nombre y Apellido</th>
-								<th>Nivel</th>
+								<th>Nombre</th>
+								<th>Descripcion</th>
 								<th>Acciones</th>
 							</tr>
 						</thead>
 						<tbody>
+								<?php $acum=1; foreach ($categorys as $category) {  ?>
 								<tr>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
+									<td><?=$acum?></td>
+									<td><?=$category->name?></td>
+									<td><?=$category->description?></td>
 									<td>
 										<a class="btn btn-primary btn-sm"><i class="fa fa-eye"></i> Ver</a>
 										<a class="btn btn-success btn-sm"><i class="fa fa-edit"></i> Actualizar</a>
 										<a class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Eliminar</a>
 									</td>
 								</tr>
+							<?php } ?>
 						</tbody>
 					</table>
 				</div>

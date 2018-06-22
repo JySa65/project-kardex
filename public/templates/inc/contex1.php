@@ -65,14 +65,29 @@
 					</ul>
 				</li>
 				<li>
+					<a href="">Procesos</a>
+					<ul class="nav nav-second-level">
+						<li>
+							<a href="<?=url('general_stadistic') ?>" class="active">Estadistica General</a>
+						</li>
+					</ul>
+				</li>
+				<li>
 					<a href="<?= url('list'); ?>" class="active"><i class="fa fa-car fa-fw"></i> Listados</a>
 					<ul class="nav nav-second-level">
 						<li>
 							<a href="<?= url('list_account') ?>" class="active">Usuarios</a>
 						</li>
 						<li>
-							<a href="<?= url('list_category')?>"></a>
+							<a href="<?= url('list_category')?>" class="active">Categorias de productos</a>
 						</li>
+						<li>
+							<a href="<?= url('list_product')?>" class="active">Productos</a>
+						</li>
+						<li>
+							<a href="<?= url('list_institution')?>" class="active">Instituciones</a>
+						</li>
+						
 						
 					</ul>
 				</li>
