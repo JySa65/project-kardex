@@ -65,10 +65,10 @@
 					</ul>
 				</li>
 				<li>
-					<a href="">Procesos</a>
+					<a href="" class="active">Procesos</a>
 					<ul class="nav nav-second-level">
 						<li>
-							<a href="<?=url('general_stadistic') ?>" class="active">Estadistica General</a>
+							<a href="<?=url('general_stadistic') ?>" class="active" >Estadistica General</a>
 						</li>
 					</ul>
 				</li>
