@@ -35,10 +35,16 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 								<input type="text" name="name" id="id_name" class="form-control" onkeypress="return sololetras(event)" placeholder="Ej: Inyectadora" required>
 							</div>
 						</div>
-						<div class="col-lg-12">
+						<div class="col-lg-6">
 							<div class="form-group">
 								<label>Descripcion del producto</label>
 								<input type="text" name="description" id="id_description" class="form-control" onkeypress="return sololetras(event)" placeholder="Breve Descripcion del producto/S">
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label>Cantidad Minina Invitario<span style="color: red">*</span></label>
+								<input type="number" name="minimo" id="id_minimo" class="form-control" onkeypress="return solonumeros(event)" placeholder="Por Defecto Cant = 0" required autocomplete="off">
 							</div>
 						</div>	
 					</div>

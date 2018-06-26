@@ -35,7 +35,7 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 										<a class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Eliminar</a>
 									</td>
 								</tr>
-							<?php } ?>
+							<?php $acum+= 1;} ?>
 						</tbody>
 					</table>
 				</div>
