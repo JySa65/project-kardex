@@ -62,9 +62,10 @@
 					<ul class="nav nav-second-level">
 						<li>
 							<a href="<?=url('general_stadistic') ?>" class="active" >Estadistica General</a>
-
-							<a href="" class="active">Inventario</a>
-							<ul class="nav nav-second-level">
+						</li>
+						<li>
+							<a href="#!" class="active" >Inventario</a>
+							<ul class="nav nav-third-level">
 								<li>
 									<a href="" class="active">Entrada</a>
 								</li>
