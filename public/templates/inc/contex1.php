@@ -58,7 +58,7 @@
 					</ul>
 				</li>
 				<li>
-					<a href="" class="active"><i class="fa fa-spinner"></i>Procesos</a>
+					<a href="" class="active"><i class="fa fa-spinner"></i> Procesos</a>
 					<ul class="nav nav-second-level">
 						<li>
 							<a href="<?=url('general_stadistic') ?>" class="active" >Estadistica General</a>
@@ -72,9 +72,6 @@
 									<a href="" class="active">Salidas</a>
 								</li>
 							</ul>
-						</li>
-						<li>
-							<a href="<?=url('general_stadistic') ?>" class="active">Estadistica General</a>
 						</li>
 					</ul>
 				</li>
