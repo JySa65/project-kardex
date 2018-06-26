@@ -29,18 +29,22 @@ class CategoryProductController extends View
 
 	private function save($id=null)
 	{
-		if ($this->form_valid()) {
-			$category = new CategoryModel;
-			$category->name = test_input($_POST['name']);
-			$category->description = test_input($_POST['description']);
-			if ($id == null) {
-				$category->save();
-				return redirect('cat_product/new');
-			}else{
-
-			}
+		if (!val_csrf()) {
+			return $this->render('error/403');
 		}else{
-			return redirect('cat_product/new', ['error' => $this->error]);
+			if ($this->form_valid()) {
+				$category = new CategoryModel;
+				$category->name = test_input($_POST['name']);
+				$category->description = test_input($_POST['description']);
+				if ($id == null) {
+					$category->save();
+					return redirect('cat_product/new');
+				}else{
+
+				}
+			}else{
+				return redirect('cat_product/new', ['error' => $this->error]);
+			}
 		}
 	}
 

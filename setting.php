@@ -1,5 +1,7 @@
 <?php 
+
 define('BASE_DIR', __DIR__);
+session_save_path(BASE_DIR . "/temp");
 
 // config time and places
 setlocale(LC_TIME, 'es_VE', 'es_VE.utf-8', 'es_VE.utf8');

@@ -47,26 +47,30 @@
 							<a href="<?= url('account/new') ?>" class="active">Usuario</a>
 						</li>
 						<li>
+							<a href="<?= url('institucions/new')  ?>" class="active">Instituciones</a>
+						</li>
+						<li>
 							<a href="<?= url('cat_product/new') ?>" class="active">Categoria de producto</a>
 						</li>
 						<li>
 							<a href="<?= url('product/new') ?>" class="active">Producto</a>
 						</li>
-						
-						<li>
-							<a href="<?= url('institucions/new')  ?>" class="active">Instituciones</a>
-						</li>
-						<li>
-							<a href="<?= url('motivo_entrada/new') ?>" class="active">Conceptos de entrada</a>
-						</li>
-						<li>
-							<a href="<?= url('motivo_salida/new') ?>" class="active">Conceptos de Salidas</a>
-						</li>
 					</ul>
 				</li>
 				<li>
-					<a href="">Procesos</a>
+					<a href="" class="active">Procesos</a>
 					<ul class="nav nav-second-level">
+						<li>
+							<a href="" class="active">Inventario</a>
+							<ul class="nav nav-second-level">
+								<li>
+									<a href="" class="active">Entrada</a>
+								</li>
+								<li>
+									<a href="" class="active">Salidas</a>
+								</li>
+							</ul>
+						</li>
 						<li>
 							<a href="<?=url('general_stadistic') ?>" class="active">Estadistica General</a>
 						</li>

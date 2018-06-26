@@ -29,28 +29,32 @@ class AccountController extends View
 
 	private function save($id=null)
 	{
-		if ($this->form_valid()) {
-			$account = new AccountModel;
-			$account->nationality = test_input($_POST['nacionality']);
-			$account->cedula = (int)test_input($_POST['cedula']);
-			$account->name = test_input($_POST['name']);
-			$account->last_name = test_input($_POST['last_name']);
-			$account->password = encrypt(test_input($_POST['password']));
-			$account->email = test_input($_POST['email']);
-			$account->address = test_input($_POST['address']);
-			$account->level = test_input($_POST['level']);
-			if ($id == null) {
-				$comprobar = $account->execute_query("SELECT * FROM account WHERE cedula='{$account->cedula}' OR email='{$account->email}'");
-				if (!empty($comprobar)) {
-					return redirect('account/new', ['error' => 'La Cedula o el correo ya existe']);
-				}
-				$account->save();
-				return redirect('account/new');
-			}else{
-
-			}
+		if (!val_csrf()) {
+			return $this->render('error/403');
 		}else{
-			return redirect('account/new', ['error' => $this->error]);
+			if ($this->form_valid()) {
+				$account = new AccountModel;
+				$account->nationality = test_input($_POST['nacionality']);
+				$account->cedula = (int)test_input($_POST['cedula']);
+				$account->name = test_input($_POST['name']);
+				$account->last_name = test_input($_POST['last_name']);
+				$account->password = encrypt(test_input($_POST['password']));
+				$account->email = test_input($_POST['email']);
+				$account->address = test_input($_POST['address']);
+				$account->level = test_input($_POST['level']);
+				if ($id == null) {
+					$comprobar = $account->execute_query("SELECT * FROM account WHERE cedula='{$account->cedula}' OR email='{$account->email}'");
+					if (!empty($comprobar)) {
+						return redirect('account/new', ['error' => 'La Cedula o el correo ya existe']);
+					}
+					$account->save();
+					return redirect('account/new');
+				}else{
+
+				}
+			}else{
+				return redirect('account/new', ['error' => $this->error]);
+			}
 		}
 	}
 

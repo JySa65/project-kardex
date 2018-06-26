@@ -18,15 +18,13 @@ class InstitucionBD extends Conection
 
         CREATE TABLE IF NOT EXISTS institucion (
         id BIGSERIAL NOT NULL PRIMARY KEY,
-        id_category INT NOT NULL,
         rif varchar(10),
         name varchar(1000) NOT NULL,
         description text,
         address text,
         tlf varchar(11),
         created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-        updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-        FOREIGN KEY (id_category) REFERENCES category(id));
+        updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP);
 
 
         DROP TRIGGER IF EXISTS set_timestamp ON institucion; 

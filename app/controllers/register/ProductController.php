@@ -33,19 +33,24 @@ class ProductController extends View
 
 	private function save()
 	{
-		if ($this->form_valid()) {
-			$product = new ProductModel;
-			$product->id_category = (int)test_input($_POST['category']);
-			$product->name = test_input($_POST['name']);
-			$product->description = test_input($_POST['description']);
-			if ($id == null) {
-				$product->save();
-				return redirect('product/new');
-			}else{
-
-			}
+		if (!val_csrf()) {
+			return $this->render('error/403');
 		}else{
-			return redirect('product/new', ['error' => $this->error]);
+			if ($this->form_valid()) {
+				$product = new ProductModel;
+				$product->id_category = (int)test_input($_POST['category']);
+				$product->name = test_input($_POST['name']);
+				$product->description = test_input($_POST['description']);
+				$product->minimo = (int)test_input($_POST['minimo']);
+				if ($id == null) {
+					$product->save();
+					return redirect('product/new');
+				}else{
+
+				}
+			}else{
+				return redirect('product/new', ['error' => $this->error]);
+			}
 		}
 	}
 

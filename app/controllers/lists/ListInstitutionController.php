@@ -7,7 +7,7 @@ use app\models\InstitucionModel;
 use app\databases\InstitucionBD;
 
 
-class ListCategoryController extends View
+class ListInstitutionController extends View
 {
 	
 	function __construct()

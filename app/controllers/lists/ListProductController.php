@@ -7,7 +7,7 @@ use app\models\ProductModel;
 use app\databases\ProductBD;
 
 
-class ListCategoryController extends View
+class ListProductController extends View
 {
 	
 	function __construct()
