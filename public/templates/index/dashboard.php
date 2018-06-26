@@ -16,7 +16,7 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 						<i class="fa fa-users fa-5x"></i>
 					</div>
 					<div class="col-xs-9 text-right">
-						<div class="huge">26</div>
+						<div class="huge"><?= count($accounts) ?></div>
 						<div>Usuarios</div>
 					</div>
 				</div>
@@ -38,12 +38,12 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 						<i class="fa fa-car fa-5x"></i>
 					</div>
 					<div class="col-xs-9 text-right">
-						<div class="huge">12</div>
+						<div class="huge"><?= count($institucions) ?></div>
 						<div>Instituciones</div>
 					</div>
 				</div>
 			</div>
-			<a href="#">
+			<a href="<?=url('list_institution')?>">
 				<div class="panel-footer">
 					<span class="pull-left">Ver Listado</span>
 					<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -60,12 +60,12 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 						<i class="fa fa-university fa-5x"></i>
 					</div>
 					<div class="col-xs-9 text-right">
-						<div class="huge">124</div>
+						<div class="huge"><?= count($products) ?></div>
 						<div>Productos</div>
 					</div>
 				</div>
 			</div>
-			<a href="#">
+			<a href="<?=url('list_product')?>">
 				<div class="panel-footer">
 					<span class="pull-left">Ver Listado</span>
 					<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -82,12 +82,12 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 						<i class="fa fa-support fa-5x"></i>
 					</div>
 					<div class="col-xs-9 text-right">
-						<div class="huge">13</div>
-						<div></div>
+						<div class="huge"><?= count($categorys) ?></div>
+						<div>Categorias</div>
 					</div>
 				</div>
 			</div>
-			<a href="#">
+			<a href="<?=url('list_category')?>">
 				<div class="panel-footer">
 					<span class="pull-left">Ver Listado</span>
 					<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
