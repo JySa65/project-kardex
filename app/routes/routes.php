@@ -18,7 +18,8 @@ new Routes([
 	"list_account" => "lists/ListAccountController",
 	"list_category" => "lists/ListCategoryController",
 	"list_product" => "lists/ListProductController",
-	"list_institution" => "lists/ListInstitutionController"
+	"list_institution" => "lists/ListInstitutionController",
+	"entry_inventory" => "inventario/EntryController"
 ])
 
 

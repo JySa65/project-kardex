@@ -67,10 +67,10 @@
 							<a href="#!" class="active" >Inventario</a>
 							<ul class="nav nav-third-level">
 								<li>
-									<a href="" class="active">Entrada</a>
+									<a href="<?= url('entry_inventory') ?>" class="active">Entrada</a>
 								</li>
 								<li>
-									<a href="" class="active">Salidas</a>
+									<a href="<?= url('inventario/salida') ?>" class="active">Salidas</a>
 								</li>
 							</ul>
 						</li>
