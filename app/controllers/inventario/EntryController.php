@@ -4,6 +4,7 @@
  */
 use framework\view\View;
 use app\models\ProductModel;
+use app\models\InstitucionModel;
 class EntryController extends View
 {
 	
@@ -14,7 +15,24 @@ class EntryController extends View
 
 	function index()
 	{
-		return $this->render("inventario/entry_form");
+		if($_SERVER['REQUEST_METHOD'] === "GET"){
+			$institute = new InstitucionModel;
+			$data = [
+				'institutes' => $institute->all()
+			];
+			return $this->render("inventario/entry_form", $data);
+		}else if($_SERVER['REQUEST_METHOD'] === "POST") {
+			$this->save();
+		}
+	}
+
+	function save()
+	{
+		if (!val_csrf()) {
+			return $this->render('error/403');
+		}else{
+			print_r($_POST);
+		}
 	}
 
 	function search_entry()

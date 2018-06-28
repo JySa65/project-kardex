@@ -30,46 +30,89 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 					</div>
 					<div class="row">
 						<div class="col-lg-12">
-							<div id="container" hidden="">
-								<hr>
-								<div class="table-responsive">
-									<form action="">
-										<table class="table">
-											<thead>
-												<tr>
-													<th>Nombre</th>
-													<th>Existencia</th>
-													<th>Añadir</th>
-													<th>Opciones</th>
-												</tr>
-											</thead>
-											<tbody id="id_result">
+							<div id="container" hidden>
+								<form method="POST" id="form_post">
+									<input type="hidden" value="<?= csrf_token() ?>" name="csrftoken" required>
+									<hr>
+									<div class="row">
+										<div class="container-fluid text-center">
+											<div class="col-lg-12">
+												<h3>Resumen</h3>
+											</div>
+										</div>
+									</div>
+									<hr>
+									<div class="row">
+										<div class="container-fluid">
+											<div class="col-lg-12">
+												
+												<div class="col-lg-6">
+													<div class="form-group">
+														<label for="id_nacionality">Institucion</label>
+														<select name="institute" id="id_institute" class="form-control" autofocus="on" autocomplete="off" required>
+															<option selected value="">Escojer Instituci&oacute;n</option>
+															<?php foreach ($institutes as $institute) { ?>
+																<option value="<?= $institute->id ?>"><?= $institute->name ?></option>
+															<?php } ?>
+														</select>
+													</div>
+												</div>
 
-											</tbody>
-										</table>
-									</form>
-								</div>
+												<div class="col-lg-6">
+													<div class="form-group">
+														<label for="id_cedula">Motivo De Entrada</label>
+														<input class="form-control" id="id_name" name="name" type="text" placeholder="Motivo de Entrada"  maxlength="1000" autocomplete="off" required>
+													</div>
+												</div>
+
+												<div class="col-lg-12">
+													<div class="form-group">
+														<label for="id_description">Breve Descripci&oacute;n De La Entrada</label>
+														<textarea name="description" id="id_description" cols="30" rows="2" class="form-control" style="resize: none;" placeholder="Breve Descripcion de la entrada"></textarea>
+													</div>
+												</div>
+
+											</div>
+										</div>
+									</div>
+									<hr>
+									<div class="row">
+										<div class="container-fluid">
+											<div class="col-lg-12">
+												<div class="table-responsive">
+													<table class="table">
+														<thead>
+															<tr>
+																<th>Nombre</th>
+																<th>Existencia</th>
+																<th>Añadir</th>
+																<th>Opciones</th>
+															</tr>
+														</thead>
+														<tbody id="id_result">
+
+														</tbody>
+													</table>
+												</div>
+											</div>
+										</div>
+									</div>
+									<hr>
+									<div class="row">
+										<div class="container-fluid text-center">
+											<div class="col-lg-12">
+												<div class="form-group">
+													<button class="btn btn-primary " type="submit"><i class="fa fa-save"></i> Aceptar</button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</form>
 							</div>
 						</div>
 					</div>
 				</div>                      
 			</div>	
-			<?php if (SESSION::has('error')) { ?>
-				<div class="panel-footer panel-danger">
-					<div class="alert alert-danger alert-dismissable">
-						<ul>
-							<?php 
-							if (is_array($_SESSION['error'])) {
-								foreach (SESSION::get('error') as $value) { ?>
-									<li class="h5"><?= $value ?></li>	
-								<?php }
-							}else{ ?>
-								<li class="h5"><?= SESSION::get('error') ?></li>
-							<?php } ?>	
-						</ul>
-					</div>
-				</div>
-			<?php } ?>
 		</div>
 	</div>
 </div>

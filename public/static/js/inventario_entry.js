@@ -52,7 +52,7 @@ document.querySelector("#id_context").addEventListener('click', function(e){
 				<td hidden>${dat.id}</td>
 				<td>${dat.name}</td>
 				<td>0</td>
-				<td><input type="number" class="form-control" autofocus="on" name="${dat.id}"</td>
+				<td><input type="number" class="form-control" required name="${dat.name}_${dat.id}" autocomplete="off" min="1"> </td>
 				<td><button type="button" class="btn btn-danger" name="delete"><i class="fa fa-trash"></i></button></td>
 				</tr>`
 				document.querySelector("#container").removeAttribute("hidden");
@@ -65,7 +65,20 @@ document.querySelector("#id_context").addEventListener('click', function(e){
 document.querySelector("#id_result").addEventListener('click', function(e){
 	var element = e.target;
 	if (element.name === "delete") {
-		a  = document.querySelector("#id_result");
 		element.parentElement.parentElement.remove();
 	}
 })
+
+document.querySelector("#form_post").addEventListener('submit', function(e){
+	a = document.querySelector("#id_result");
+	if (a.childElementCount == 0) {
+		alert("Debe Registrar como minimo 1 producto");
+		e.preventDefault();
+	}
+	var bool=confirm("Esta Seguro que desea guardar los datos");
+	if(!bool){
+		e.preventDefault();
+	}
+})
+
+
