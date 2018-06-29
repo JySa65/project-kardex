@@ -8,6 +8,9 @@ new Routes([
 	"login/" => "LoginController",
 	"dashboard/" => "DashBoardController",
 	"account" => "register/AccountController",
+	"list_account" => "lists/ListAccountController",
+	"detail_account" => "detail/DetailAccountController",
+
 	"cat_product" => "register/CategoryProductController",
 	"product" => "register/ProductController",
 	"institucions" => "register/InstitucionController",
@@ -15,11 +18,11 @@ new Routes([
 	"motivo_salida" => "MotSController",
 	"list" => "ListController",
 	"logout" => "LogoutController",
-	"list_account" => "lists/ListAccountController",
 	"list_category" => "lists/ListCategoryController",
 	"list_product" => "lists/ListProductController",
 	"list_institution" => "lists/ListInstitutionController",
-	"entry_inventory" => "inventario/EntryController"
+	"entry_inventory" => "inventario/EntryController",
+
 ])
 
 

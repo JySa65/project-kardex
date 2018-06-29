@@ -5,8 +5,8 @@
 
 namespace app\models;
 use framework\basedatos\Model;
-class AccountModel extends Model
+class InputAndOutputModel extends Model
 {
-	protected static $table= "account";	
+	protected static $table= "inpout";	
 }
 ?>

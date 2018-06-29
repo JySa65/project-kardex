@@ -5,8 +5,8 @@
 
 namespace app\models;
 use framework\basedatos\Model;
-class AccountModel extends Model
+class ReasonModel extends Model
 {
-	protected static $table= "account";	
+	protected static $table= "reason";	
 }
 ?>

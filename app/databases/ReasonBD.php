@@ -19,7 +19,7 @@ class ReasonBD extends Conection
         id BIGSERIAL NOT NULL PRIMARY KEY,
         id_account int,
 		id_institute int,
-		status int
+		status int,
 		name varchar(1000),
 		description text,
         created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,

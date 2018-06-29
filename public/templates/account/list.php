@@ -32,7 +32,7 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 									<td><?=$account->name?> <?=$account->last_name?></td>
 									<td><?=$account->level?></td>
 									<td>
-										<a class="btn btn-primary btn-sm"><i class="fa fa-eye"></i> Ver</a>
+										<a class="btn btn-primary btn-sm" href="<?= url("detail_account/view/{$account->id}") ?>"><i class="fa fa-eye"></i> Ver</a>
 										<a class="btn btn-success btn-sm"><i class="fa fa-edit"></i> Actualizar</a>
 										<a class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Eliminar</a>
 									</td>

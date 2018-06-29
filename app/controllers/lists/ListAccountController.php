@@ -17,7 +17,7 @@ class ListAccountController extends View
 	function index()
 	{
 		$account = new AccountModel;
-		$accounts = $account->where("level", "!=", "administrador");
+		$accounts = $account->all();
 		return $this->render('account/list', ["accounts"=>$accounts]);
 
 	}
