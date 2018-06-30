@@ -76,11 +76,11 @@ class AccountController extends View
 				$account->cedula = (int)test_input($_POST['cedula']);
 				$account->name = test_input($_POST['name']);
 				$account->last_name = test_input($_POST['last_name']);
-				$account->password = encrypt(test_input($_POST['cedula']));
 				$account->email = test_input($_POST['email']);
 				$account->address = test_input($_POST['address']);
 				$account->level = test_input($_POST['level']);
 				if ($id == null) {
+					$account->password = encrypt(test_input($_POST['cedula']));
 					$comprobar = $account->execute_query("SELECT * FROM account WHERE cedula='{$account->cedula}' OR email='{$account->email}'");
 					if (!empty($comprobar)) {
 						return redirect('account/new', ['error' => 'La Cedula o el correo ya existe']);

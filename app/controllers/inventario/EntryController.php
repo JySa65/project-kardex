@@ -14,7 +14,8 @@ class EntryController extends View
 	function __construct()
 	{
 		parent::__construct();
-		$this->error = [];	
+		$this->error = [];
+		$this->id_reason = "";	
 		new ReasonBD;	
 		new InpoutBD;
 	}
@@ -39,7 +40,8 @@ class EntryController extends View
 		}else{
 			if ($this->form_valid()){
 				$this->save_product();
-				return redirect('entry_inventory');
+
+				return redirect("detail_inventory/entry/{$this->id_reason}");
 			}else{
 				return redirect('entry_inventory');
 			}	
@@ -52,10 +54,11 @@ class EntryController extends View
 		$reason->id_account = sessionLocal('user')->id;
 		$reason->id_institute = (int)test_input($_POST['institute']);
 		$reason->status = 1;
-		$reason->name = (int)test_input($_POST['name']);
-		$reason->description = (int)test_input($_POST['description']);
+		$reason->name = test_input($_POST['name']);
+		$reason->description = test_input($_POST['description']);
 		$reason->save();
 		$id_reason = $reason->execute_query("SELECT * FROM reason ORDER BY id DESC LIMIT 1")[0]->id;
+		$this->id_reason = $id_reason;
 		foreach ($_POST as $key => $value) {
 			$pre = explode("_", $key);
 			if (count($pre) == 2) {

@@ -74,10 +74,11 @@ document.querySelector("#form_post").addEventListener('submit', function(e){
 	if (a.childElementCount == 0) {
 		alert("Debe Registrar como minimo 1 producto");
 		e.preventDefault();
-	}
-	var bool=confirm("Esta Seguro que desea guardar los datos");
-	if(!bool){
-		e.preventDefault();
+	}else {
+		var bool=confirm("Esta Seguro que desea guardar los datos");
+		if(!bool){
+			e.preventDefault();
+		}
 	}
 })
 
