@@ -27,6 +27,44 @@ class AccountController extends View
 		}
 	}
 
+	function update($id)
+	{
+		$account = new AccountModel;
+		$user = $account->find('id', '=', $id);
+		if($_SERVER['REQUEST_METHOD'] == "GET"){
+			if (count($user) != 0) {
+				return $this->render('account/account_form', ['user' => $user]);
+			}else{
+				return $this->render('error/404');
+			}
+		}else if($_SERVER['REQUEST_METHOD'] == "POST") {
+			$this->save($id);	
+		}
+	}
+
+	function delete($id)
+	{
+		$account = new AccountModel;
+		$user = $account->find('id', '=', $id);
+		if($_SERVER['REQUEST_METHOD'] == "GET"){
+			if (count($user) != 0) {
+				return $this->render('account/account_delete', ['user' => $user]);
+			}else{
+				return $this->render('error/404');
+			}
+		}else if($_SERVER['REQUEST_METHOD'] == "POST") {
+			if (isset($_POST['csrftoken'])) {
+				if($user->delete($user->id)){
+					return redirect('list_account', ['message' => 'Conductor Eliminado Sastifactoriamente']);
+				}else{
+					return redirect('list_account', ['message' => 'Conductor No Pudo Ser Eliminado']);
+				}
+			}else{
+				return $this->render('error/403');
+			}	
+		}
+	}
+
 	private function save($id=null)
 	{
 		if (!val_csrf()) {
@@ -38,7 +76,7 @@ class AccountController extends View
 				$account->cedula = (int)test_input($_POST['cedula']);
 				$account->name = test_input($_POST['name']);
 				$account->last_name = test_input($_POST['last_name']);
-				$account->password = encrypt(test_input($_POST['password']));
+				$account->password = encrypt(test_input($_POST['cedula']));
 				$account->email = test_input($_POST['email']);
 				$account->address = test_input($_POST['address']);
 				$account->level = test_input($_POST['level']);
@@ -48,17 +86,22 @@ class AccountController extends View
 						return redirect('account/new', ['error' => 'La Cedula o el correo ya existe']);
 					}
 					$account->save();
-					return redirect('account/new');
+					return redirect('list_account');
 				}else{
-
+					$account->id = (int)test_input($id);
+					$account->save();
+					return redirect('list_account');
 				}
 			}else{
-				return redirect('account/new', ['error' => $this->error]);
+				if ($id==null) {
+					return redirect('account/new', ['error' => $this->error]);
+				}
+				return redirect("account/update/{$id}", ['error' => $this->error]);
 			}
 		}
 	}
 
-	private function form_valid()
+	private function form_valid($id=null)
 	{
 		$data = [
 			'nacionality' => 'nacionalidad',
@@ -66,12 +109,10 @@ class AccountController extends View
 			'name' => 'nombre', 
 			'last_name' => 'apellido',
 			'email' => 'correo electronico',
-			'level' => 'nivel de acceso',
 			'address' => 'direccion',
-			'password' => 'contraseña'
 		];
 		$data_text = ['nacionality', 'name', 'last_name', 'level'];
-		$data_len = ['cedula', 'password'];
+		$data_len = ['cedula'];
 		foreach ($data as $key => $value) {
 			if (empty($_POST[$key])) {
 				array_push($this->error, "La Variable {$value} es requerida");	

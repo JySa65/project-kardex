@@ -4,7 +4,7 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 ?>
 <div class="row">
 	<div class="col-lg-12">
-		<h1 class="page-header">Usuarios | <a href="<?= url('dashboard') ?>" class="btn btn-success"><i class="fa fa-reply"></i> Regresar</a></h1>
+		<h1 class="page-header">Usuarios | <a href="<?= url('list_account') ?>" class="btn btn-success"><i class="fa fa-reply"></i> Regresar</a></h1>
 	</div>
 </div>
 
@@ -52,27 +52,23 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 								<input class="form-control" id="id_email" name="email" type="email" placeholder="Correo Electronico" maxlength="255" autocomplete="off" value="<?= isset($user) ? $user->email : '' ?>">
 							</div>
 						</div>
-						<div class="col-lg-6">
-							<div class="form-group">
-								<label for="id_level">Nivel de Acceso</label>
-								<select name="level" id="id_level" class="form-control" autofocus="on" autocomplete="off" required value="">
-									<option value="" selected="">Escojer Nivel</option>
-									<option value="administrador">Administrador</option>
-									<option value="supervisor">Supervisor</option>
-									<option value="trabajador">Trabajador</option>
-								</select>
+						<?php if (!isset($user)) { ?>
+							<div class="col-lg-6">
+								<div class="form-group">
+									<label for="id_level">Nivel de Acceso</label>
+									<select name="level" id="id_level" class="form-control" autofocus="on" autocomplete="off" required value="">
+										<option value="" selected="">Escojer Nivel</option>
+										<option value="administrador">Administrador</option>
+										<option value="supervisor">Supervisor</option>
+										<option value="trabajador">Trabajador</option>
+									</select>
+								</div>
 							</div>
-						</div>
-						<div class="col-lg-6">
+						<?php } ?>
+						<div class="<?= isset($user) ? 'col-lg-6' : 'col-lg-12' ?>">
 							<div class="form-group">
 								<label for="id_address">Direccion</label>
-								<textarea name="address" id="id_address" cols="30" rows="1" class="form-control" style="overflow:auto; height: 50%;" placeholder="Direccion"><?= isset($user) ? $user->address : '' ?></textarea>
-							</div>
-						</div>
-						<div class="col-lg-6">
-							<div class="form-group">
-								<label for="id_password">Contraseña</label>
-								<input class="form-control" id="id_password" name="password" type="password" placeholder="" maxlength="8" autocomplete="off">
+								<textarea name="address" id="id_address" cols="30" rows="1" class="form-control" style="overflow:auto; height: 50%; resize: none;" placeholder="Direccion" autocomplete="off"><?= isset($user) ? $user->address : '' ?></textarea>
 							</div>
 						</div>
 						<div class="col-lg-12">
