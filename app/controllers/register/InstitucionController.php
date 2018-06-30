@@ -25,6 +25,22 @@ class InstitucionController extends View
 			$this->save();
 		}
 	}
+
+	function update($id)
+	{
+		$account = new InstitucionModel;
+		$user = $account->find('id', '=', $id);
+		if($_SERVER['REQUEST_METHOD'] == "GET"){
+			if (count($user) != 0) {
+				return $this->render('institucion/institucion_form', ['user' => $user]);
+			}else{
+				return $this->render('error/404');
+			}
+		}else if($_SERVER['REQUEST_METHOD'] == "POST") {
+			$this->save($id);	
+		}
+	}
+
 	private function save($id=null)
 	{
 		if (!val_csrf()) {
