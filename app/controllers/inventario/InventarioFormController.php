@@ -8,7 +8,7 @@ if (!is_authenticated()) {
 use framework\view\View;
 use app\models\{ProductModel, InstitucionModel, ReasonModel, InputAndOutputModel as InpoutModel};
 use app\databases\{ReasonBD, InputAndOutputBD as InpoutBD};
-class EntryController extends View
+class InventarioFormController extends View
 {
 	
 	function __construct()
@@ -22,38 +22,54 @@ class EntryController extends View
 
 	function index()
 	{
+		return $this->render('error/404');
+	}
+
+	function entry()
+	{
+		$this->re_view(1, "entry", "Entrada");
+	}
+
+
+	function output()
+	{
+		$this->re_view(2, "output", "Salida");
+	}
+
+	private function re_view($num, $type, $na)
+	{
 		if($_SERVER['REQUEST_METHOD'] === "GET"){
 			$institute = new InstitucionModel;
 			$data = [
-				'institutes' => $institute->all()
+				'institutes' => $institute->all(),
+				'type' => $na,
 			];
 			return $this->render("inventario/entry_form", $data);
 		}else if($_SERVER['REQUEST_METHOD'] === "POST") {
-			$this->save();
+			$this->save($num);
+			return redirect("detail_inventory/$type/{$this->id_reason}");
 		}
 	}
 
-	private function save()
+	private function save($num)
 	{
 		if (!val_csrf()) {
 			return $this->render('error/403');
 		}else{
 			if ($this->form_valid()){
-				$this->save_product();
-
-				return redirect("detail_inventory/entry/{$this->id_reason}");
+				$this->save_product($num);
 			}else{
 				return redirect('entry_inventory');
 			}	
 		}
 	}
 
-	private function save_product()
+	private function save_product($num)
 	{
 		$reason = new ReasonModel;
 		$reason->id_account = sessionLocal('user')->id;
 		$reason->id_institute = (int)test_input($_POST['institute']);
-		$reason->status = 1;
+		$reason->status = $num;
 		$reason->name = test_input($_POST['name']);
 		$reason->description = test_input($_POST['description']);
 		$reason->save();
@@ -69,6 +85,7 @@ class EntryController extends View
 					$inpout->id_product = $res[0]->id;
 					$inpout->id_reason = $id_reason;
 					$inpout->quantity = $value;
+					$inpout->type = $num;
 					$inpout->save();
 				}
 			}
@@ -119,7 +136,7 @@ class EntryController extends View
 			$query = "SELECT * FROM product WHERE id = {$data}";
 			$data = $product->execute_query($query);	
 			if (!empty($data)) {
-				echo json_encode(['rs'=>$data[0]]);
+				echo json_encode(['rs'=>$data[0], 'disp' => existence_products($data[0]->id)]);
 			}else{
 				echo json_encode(['rs'=>false]);
 			}

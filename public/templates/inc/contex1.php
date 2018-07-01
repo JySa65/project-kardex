@@ -67,10 +67,10 @@
 							<a href="#!" class="active" >Inventario</a>
 							<ul class="nav nav-third-level">
 								<li>
-									<a href="<?= url('entry_inventory') ?>" class="active">Entrada</a>
+									<a href="<?= url('inventory_register/entry') ?>" class="active">Entrada</a>
 								</li>
 								<li>
-									<a href="<?= url('inventario/salida') ?>" class="active">Salidas</a>
+									<a href="<?= url('inventory_register/output') ?>" class="active">Salidas</a>
 								</li>
 							</ul>
 						</li>
@@ -90,6 +90,20 @@
 						</li>
 						<li>
 							<a href="<?= url('list_institution')?>" class="active">Instituciones</a>
+						</li>
+						<li>
+							<a href="#!" class="active">Inventario</a>
+							<ul class="nav nav-third-level">
+								<li>
+									<a href="<?= url('list_inventario/resumen')?>" class="active">Inventario</a>
+								</li>
+								<li>
+									<a href="<?= url('list_inventario/entry')?>" class="active">Entrada</a>
+								</li>
+								<li>
+									<a href="<?= url('list_inventario/output')?>" class="active">Salidas</a>
+								</li>
+							</ul>
 						</li>
 						
 						

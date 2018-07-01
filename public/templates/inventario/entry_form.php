@@ -2,6 +2,10 @@
 include(TEMPLATES_DIR . "templates/inc/head.php");
 include(TEMPLATES_DIR . "templates/inc/contex1.php");
 ?>
+<script>
+	var type = "<?= $type ?>";
+	console.log(type);
+</script>
 <div class="row">
 	<div class="col-lg-12">
 		<h1 class="page-header">Inventario | <a href="<?= url('dashboard') ?>" class="btn btn-success"><i class="fa fa-reply"></i> Regresar</a></h1>
@@ -12,7 +16,7 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 	<div class="col-lg-12">
 		<div class="panel panel-success">
 			<div class="panel-heading">
-				<h4>Entrada</h4>
+				<h4><?= $type ?></h4>
 			</div>
 			<div class="panel-body">
 				<div class="row">
@@ -60,14 +64,14 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 
 												<div class="col-lg-6">
 													<div class="form-group">
-														<label for="id_cedula">Motivo De Entrada</label>
+														<label for="id_cedula">Nombre De la <?= $type ?></label>
 														<input class="form-control" id="id_name" name="name" type="text" placeholder="Motivo de Entrada"  maxlength="1000" autocomplete="off" required>
 													</div>
 												</div>
 
 												<div class="col-lg-12">
 													<div class="form-group">
-														<label for="id_description">Breve Descripci&oacute;n De La Entrada</label>
+														<label for="id_description">Motivo De La <?= $type ?></label>
 														<textarea name="description" id="id_description" cols="30" rows="2" class="form-control" style="resize: none;" placeholder="Breve Descripcion de la entrada"></textarea>
 													</div>
 												</div>
@@ -102,7 +106,7 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 										<div class="container-fluid text-center">
 											<div class="col-lg-12">
 												<div class="form-group">
-													<button class="btn btn-primary " type="submit"><i class="fa fa-save"></i> Aceptar</button>
+													<button class="btn btn-primary " type="submit" name="save"><i class="fa fa-save"></i> Aceptar</button>
 												</div>
 											</div>
 										</div>

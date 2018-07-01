@@ -21,6 +21,7 @@ class InputAndOutputBD extends Conection
         id_product INT,
         id_reason INT,
         quantity INT,
+        type INT,
         created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
         updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
         FOREIGN KEY (id_product) REFERENCES product(id),

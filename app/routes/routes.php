@@ -23,8 +23,10 @@ new Routes([
 	"list_institution" => "lists/ListInstitutionController",
 	
 	#inventario
-	"entry_inventory" => "inventario/EntryController",
+	"inventory_register" => "inventario/InventarioFormController",
 	"detail_inventory" => "inventario/DetailInventarioController",
+	"list_inventario" => "inventario/ListInventarioController",
+
 ])
 
 

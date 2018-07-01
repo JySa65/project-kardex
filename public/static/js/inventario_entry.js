@@ -4,7 +4,7 @@ function search_product()
 	if (data.value == "") {
 		alert("Campo Esta Vacio");
 	}else{
-		$.getJSON( "entry_inventory/search_entry/", { "q" : data.value} )
+		$.getJSON( "/project-kardex/inventory_register/search_entry/", { "q" : data.value} )
 		.done(function(res) {
 			if (res['rs'] == false) {
 				alert("El Producto no se encuentra registrado");
@@ -27,6 +27,22 @@ function search_product()
 	}
 }
 
+function check_input(e)
+{
+	if (type=="Salida") {
+		var element = e.target
+		var exist = parseInt(element.parentElement.parentElement.children[2].textContent);
+		var value = parseInt(element.value);
+		var btn = document.querySelector("button[name='save']");
+		if (exist < value) {
+			btn.setAttribute("disabled", "")
+			element.focus()
+		}else{
+			btn.removeAttribute("disabled")
+		}
+	}
+}
+
 document.querySelector("#id_context").addEventListener('click', function(e){
 	document.querySelector('input[name=q]').value = "";
 	var element = e.target; 
@@ -41,7 +57,7 @@ document.querySelector("#id_context").addEventListener('click', function(e){
 				}
 			}
 		}
-		$.getJSON(`entry_inventory/search_id/${element.id}` )
+		$.getJSON(`/project-kardex/inventory_register/search_id/${element.id}` )
 		.done(function(res) {
 			var dat = res['rs'];
 			if (dat == false) {
@@ -51,8 +67,9 @@ document.querySelector("#id_context").addEventListener('click', function(e){
 				tr = `<tr>
 				<td hidden>${dat.id}</td>
 				<td>${dat.name}</td>
-				<td>0</td>
-				<td><input type="number" class="form-control" required name="${dat.name}_${dat.id}" autocomplete="off" min="1"> </td>
+				<td>${res['disp']}</td>
+				<td><input type="number" class="form-control valid" onblur="javascript:check_input(event)"
+				required name="${dat.name}_${dat.id}" autocomplete="off" min="1"> </td>
 				<td><button type="button" class="btn btn-danger" name="delete"><i class="fa fa-trash"></i></button></td>
 				</tr>`
 				document.querySelector("#container").removeAttribute("hidden");

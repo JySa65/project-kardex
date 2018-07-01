@@ -18,6 +18,10 @@ require("models/IntitucionModel.php");
 require("models/ReasonModel.php");
 require("models/InputAndOutputModel.php");
 
+//helpers
+require('helpers/helpers.php');
+
 // routes
 require('routes/routes.php');
+
 ?>
