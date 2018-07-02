@@ -21,7 +21,7 @@
 					<?= strtoupper(sessionLocal('user')->username);?><i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
 				</a>
 				<ul class="dropdown-menu dropdown-user">
-					<li><a href="#"><i class="fa fa-gear fa-fw"></i>Cambio de Clave</a></li>
+					<li><a href="<?= url('change_password') ?>"><i class="fa fa-gear fa-fw"></i>Cambio de Clave</a></li>
 					<li><a href="#"><i class="fa fa-file fa-fw"></i>Documentacion</a></li>
 					<li class="divider"></li>
 					<li><a href="<?= url('logout') ?>"><i class="fa fa-sign-out fa-fw"></i>Cerrar Sesi&oacute;n</a>

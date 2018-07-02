@@ -27,6 +27,9 @@ new Routes([
 	"detail_inventory" => "inventario/DetailInventarioController",
 	"list_inventario" => "inventario/ListInventarioController",
 
+	#password
+	"change_password" => "index/ChangePasswordController"
+
 ])
 
 

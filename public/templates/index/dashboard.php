@@ -97,9 +97,52 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 		</div>
 	</div>
 </div>
-
+<div class="clearfix"></div>
+<div class="row">
+	<div class="col-lg-12">
+		<div class="panel panel-success">
+			<div class="panel-heading">
+				<h4>Producto Con La Existencia Minima</h4>
+			</div>
+			<div class="panel-body">
+				<div class="table-responsive">
+					<table class="display" style="width: 100%" id="inventario_list">
+						<thead>
+							<tr>
+								<th>#</th>
+								<th>Nombre</th>
+								<th>Minimo</th>
+								<th>Restante</th>
+								<th>Opciones</th>
+							</tr>
+						</thead>
+						<tbody>
+							<?php $acum = 1; foreach ($products as $product) { 
+								if (existence_products($product->id) <= $product->minimo) { ?>
+									<tr>
+										<td><?= $acum ?></td>
+										<td><?= $product->name ?></td>
+										<td><?= $product->minimo ?></td>
+										<td><?= existence_products($product->id) ?></td>
+										<td><a class="btn btn-success btn-sm" href="<?= url("detail_inventory/history/{$product->id}") ?>"><i class="fa fa-eye"></i> Historial</a></td>
+									</tr>
+									<?php $acum+=1; } ?>
+								<?php } ?>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 
 <?php
 @include(TEMPLATES_DIR . "templates/inc/contex2.php");
 @include(TEMPLATES_DIR . "templates/inc/footer.php");
 ?>
+<script>
+	$(document).ready(function() {
+		$('#inventario_list').DataTable();
+	} );
+</script>
