@@ -31,7 +31,9 @@ new Routes([
 	"list_inventario" => "inventario/ListInventarioController",
 
 	#password
-	"change_password" => "index/ChangePasswordController"
+	"change_password" => "index/ChangePasswordController",
+
+	"report_list_empresa" => "report/PruebaController"
 
 ])
 

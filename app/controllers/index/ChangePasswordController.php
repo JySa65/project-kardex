@@ -42,7 +42,7 @@ class ChangePasswordController extends View
 						$account->save();
 						session_start();
 						session_destroy();
-						return redirect('dashboard');
+						return redirect('login');
 					}else{
 						return redirect('change_password', ['error' => "La Contraseña No Puede Ser Igual A La Anterior"]);
 					}
