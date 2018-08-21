@@ -8,6 +8,9 @@
         }
     ],
     "require": {
-        "vlucas/phpdotenv": "^2.4"
-    }
+        "vlucas/phpdotenv": "^2.4",
+        "setasign/fpdf": "^1.8"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
