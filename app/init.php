@@ -2,6 +2,8 @@
 // framework
 require('../framework/core.init.php');
 
+require("controllers/report/BaseFpdf.php");
+
 // bases de datos
 require("databases/AccountBD.php");
 require("databases/CategoryBD.php");
@@ -21,6 +23,7 @@ require("models/InputAndOutputModel.php");
 //helpers
 require('helpers/helpers.php');
 
+//
 // routes
 require('routes/routes.php');
 
