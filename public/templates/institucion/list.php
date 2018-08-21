@@ -32,9 +32,9 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 								<td><?=$institucion->name?></td>
 								<td><?=$institucion->tlf?></td>
 								<td>
-									<a class="btn btn-primary btn-sm"><i class="fa fa-eye" href="<? =url("detail_institucions/view/{$institucion->id}") ?>"></i> Ver</a>
-									<a class="btn btn-success btn-sm"><i class="fa fa-edit" href="<? =url("institucions/update/{$institucion->id}") ?>"></i> Actualizar</a>
-									<a class="btn btn-danger btn-sm"><i class="fa fa-trash" href="<? =url("institucions/delete/{$institucion->id}") ?>"></i> Eliminar</a>
+									<a class="btn btn-primary btn-sm" href="<?=url("detail_institucion/view/{$institucion->id}")?>"><i class="fa fa-eye"></i> Ver</a>
+									<a class="btn btn-success btn-sm" href="<?=url("institucion/update/{$institucion->id}") ?>"><i class="fa fa-edit"></i> Actualizar</a>
+									<a class="btn btn-danger btn-sm" href="<?=url("institucion/delete/{$institucion->id}") ?>"><i class="fa fa-trash"></i> Eliminar</a>
 								</td>
 							</tr>
 							<?php $acum+= 1;} ?>

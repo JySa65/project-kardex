@@ -10,6 +10,9 @@ new Routes([
 	"account" => "register/AccountController",
 	"list_account" => "lists/ListAccountController",
 	"detail_account" => "detail/DetailAccountController",
+	"detail_category" => "detail/DetailCategoryController",
+	"detail_product" => "detail/DetailProductController",
+	"detail_institucion" => "detail/DetailInstitucionController",
 
 	"cat_product" => "register/CategoryProductController",
 	"product" => "register/ProductController",
