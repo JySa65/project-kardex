@@ -41,7 +41,28 @@ class CategoryProductController extends View
 			$this->save($id);	
 		}
 	}
-
+	function delete($id)
+	{
+		$account = new CategoryModel;
+		$user = $account->find('id', '=', $id);
+		if($_SERVER['REQUEST_METHOD'] == "GET"){
+			if (count($user) != 0) {
+				return $this->render('cat_pro/cat_pro_delete', ['user' => $user]);
+			}else{
+				return $this->render('error/404');
+			}
+		}else if($_SERVER['REQUEST_METHOD'] == "POST") {
+			if (isset($_POST['csrftoken'])) {
+				if($user->delete($user->id)){
+					return redirect('list_cat_pro', ['message' => 'Categoria Eliminado Sastifactoriamente']);
+				}else{
+					return redirect('list_account', ['message' => 'Categoria No Pudo Ser Eliminada']);
+				}
+			}else{
+				return $this->render('error/403');
+			}	
+		}
+	}
 	private function save($id=null)
 	{
 		if (!val_csrf()) {
