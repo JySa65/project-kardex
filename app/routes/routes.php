@@ -16,7 +16,7 @@ new Routes([
 
 	"cat_product" => "register/CategoryProductController",
 	"product" => "register/ProductController",
-	"institucions" => "register/InstitucionController",
+	"institucion" => "register/InstitucionController",
 	"motivo_entrada" => "MotEController",
 	"motivo_salida" => "MotSController",
 	"list" => "ListController",

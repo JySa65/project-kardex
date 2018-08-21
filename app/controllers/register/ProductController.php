@@ -31,6 +31,21 @@ class ProductController extends View
 		}
 	}
 
+	function update($id)
+	{
+		$account = new CategoryModel;
+		$user = $account->find('id', '=', $id);
+		if($_SERVER['REQUEST_METHOD'] == "GET"){
+			if (count($user) != 0) {
+				return $this->render('product/product_form', ['user' => $user]);
+			}else{
+				return $this->render('error/404');
+			}
+		}else if($_SERVER['REQUEST_METHOD'] == "POST") {
+			$this->save($id);	
+		}
+	}
+
 	private function save()
 	{
 		if (!val_csrf()) {

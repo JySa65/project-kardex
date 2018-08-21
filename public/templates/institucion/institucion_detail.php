@@ -21,7 +21,10 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 					<h4><b>Descripcion: </b><?= $account->description ?></h4>
 				</div>
 				<div class="col-lg-6">
-					<h4><b>Minimo de stock: </b><?= $account->minimo ?></h4>
+					<h4><b>RIF: </b><?= $account->rif ?></h4>
+				</div>
+				<div class="col-lg-6">
+					<h4><b>Direccion: </b><?= $account->address ?></h4>
 				</div>
 			</div>
 		</div>

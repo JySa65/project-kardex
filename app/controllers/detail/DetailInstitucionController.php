@@ -6,7 +6,7 @@ if (!is_authenticated()) {
 	return redirect('login');
 }
 use framework\view\View;
-use app\models\IntitucionModel;
+use app\models\InstitucionModel;
 class DetailInstitucionController extends View
 {
 	
@@ -26,7 +26,7 @@ class DetailInstitucionController extends View
 		if (!is_numeric($id)) {
 			return $this->render('error/404');
 		}
-		$account = new IntitucionModel;
+		$account = new InstitucionModel;
 		$detail = $account->find('id', '=', (int)$id); 
 		if (empty($detail)) {
 			return $this->render('error/404');	
