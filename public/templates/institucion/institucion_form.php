@@ -21,25 +21,25 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 						<div class="col-lg-6">
 							<div class="form-group">
 								<label>Nombre de la institucion <span style="color: red">*</span></label>
-								<input type="text" name="name" id="id_name" class="form-control" placeholder="Ej: Hospital Miguel Oraa" onkeypress="return sololetras(event)" required>
+								<input type="text" name="name" id="id_name" class="form-control" placeholder="Ej: Hospital Miguel Oraa" onkeypress="return sololetras(event)" value="<?= isset($user) ? $user->name : '' ?>" required>
 							</div>
 						</div>
 						<div class="col-lg-6">
 							<div class="form-group">
 								<label>Descripcion del la institucion</label>
-								<input type="text" name="description" id="id_description" class="form-control" onkeypress="return sololetras(event)" placeholder="Breve Descripcion de la isntitucion">
+								<input type="text" name="description" id="id_description" class="form-control" onkeypress="return sololetras(event)" placeholder="Breve Descripcion de la isntitucion" value="<?= isset($user) ? $user->description : '' ?>">
 							</div>
 						</div>
 						<div class="col-lg-6">
 							<div class="form-group">
 								<label>RIF de la institucion <span style="color: red">*</span></label>
-								<input type="number" min="1" name="rif" id="id_rif" class="form-control" placeholder="Ej: J0000000" required>
+								<input type="number" min="1" name="rif" id="id_rif" class="form-control" placeholder="Ej: J0000000" value="<?= isset($user) ? $user->rif : '' ?>" required>
 							</div>
 						</div>
 						<div class="col-lg-6">
 							<div class="form-group">
 								<label>Direccion de la institucion <span style="color: red">*</span></label>
-								<input type="text" name="address" id="id_address" class="form-control" placeholder="">
+								<input type="text" name="address" id="id_address" class="form-control" value="<?= isset($user) ? $user->address : '' ?>" placeholder="">
 							</div>
 						</div>
 						<div class="col-lg-6">
