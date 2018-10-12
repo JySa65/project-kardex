@@ -1,8 +1,11 @@
   function solonumeros(e){
     tecla = (document.all) ? e.keyCode : e.which;
 
-    //Tecla de retroceso para borrar, siempre la permite
+    //Tecla de retroceso para borrar y espacio, siempre las permite
     if (tecla==8){
+        return true;
+    }
+    if (tecla==32) {
         return true;
     }
         
@@ -14,8 +17,11 @@
   function sololetras(e){
     tecla = (document.all) ? e.keyCode : e.which;
 
-    //Tecla de retroceso para borrar, siempre la permite
+    //Tecla de retroceso para borrar y espacio, siempre las permite
     if (tecla==8){
+        return true;
+    }
+    if (tecla==32) {
         return true;
     }
         

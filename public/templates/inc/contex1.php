@@ -47,7 +47,7 @@
 							<a href="<?= url('account/new') ?>" class="active">Usuario</a>
 						</li>
 						<li>
-							<a href="<?= url('institucions/new')  ?>" class="active">Instituciones</a>
+							<a href="<?= url('institucion/new')  ?>" class="active">Instituciones</a>
 						</li>
 						<li>
 							<a href="<?= url('cat_product/new') ?>" class="active">Categoria de producto</a>

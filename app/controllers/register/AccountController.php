@@ -55,9 +55,9 @@ class AccountController extends View
 		}else if($_SERVER['REQUEST_METHOD'] == "POST") {
 			if (isset($_POST['csrftoken'])) {
 				if($user->delete($user->id)){
-					return redirect('list_account', ['message' => 'Conductor Eliminado Sastifactoriamente']);
+					return redirect('list_account', ['message' => 'Cuenta eliminada Sastifactoriamente']);
 				}else{
-					return redirect('list_account', ['message' => 'Conductor No Pudo Ser Eliminado']);
+					return redirect('list_account', ['message' => 'Cuenta No Pudo Ser Eliminada']);
 				}
 			}else{
 				return $this->render('error/403');

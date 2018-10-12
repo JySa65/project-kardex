@@ -56,15 +56,15 @@ class InstitucionController extends View
 				if ($id == null) {
 					$comprobar = $institucion->execute_query("SELECT * FROM institucion WHERE rif='{$institucion->rif}'");
 					if (!empty($comprobar)) {
-						return redirect('institucions/new', ['error' => 'Institucion ya existente']);
+						return redirect('institucion/new', ['error' => 'Institucion ya existente']);
 					}
 					$institucion->save();
-					return redirect('institucions/new');
+					return redirect('institucion/new');
 				}else{
 
 				}
 			}else{
-				return redirect('institucions/new', ['error' => $this->error]);
+				return redirect('institucion/new', ['error' => $this->error]);
 			}
 		}
 	}

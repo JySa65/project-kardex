@@ -59,7 +59,7 @@ class ProductController extends View
 				$product->minimo = (int)test_input($_POST['minimo']);
 				if ($id == null) {
 					$product->save();
-					return redirect('product/new');
+					return redirect('list_product');
 				}else{
 
 				}

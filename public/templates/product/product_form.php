@@ -22,7 +22,7 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 							<div class="form-group">
 								<label>Categoria de Producto  <span style="color: red">*</span></label>
 								<select name="category" id="id_category" autocomplete="off" required class="form-control">
-									<option value="">Seleccione Catgoria <span class="ast-input">*</span></option>
+									<option value="">Seleccione Categoria <span class="ast-input">*</span></option>
 									<?php foreach ($categorys as $category) {?>
 										<option value="<?= $category->id ?>"><?= $category->name ?></option>
 									<?php } ?>
@@ -43,7 +43,7 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 						</div>
 						<div class="col-md-6">
 							<div class="form-group">
-								<label>Cantidad Minina Invitario<span style="color: red">*</span></label>
+								<label>Cantidad Minina Inventario<span style="color: red">*</span></label>
 								<input type="number" name="minimo" id="id_minimo" class="form-control" onkeypress="return solonumeros(event)" placeholder="Por Defecto Cant = 0" required autocomplete="off" value="<?= isset($user) ? $user->minimo : '' ?>">
 							</div>
 						</div>	
