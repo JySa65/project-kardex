@@ -117,7 +117,7 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 							</tr>
 						</thead>
 						<tbody>
-							<?php $acum = 1; foreach ($products as $product) { 
+							<?php if (count($products) == 0) { $acum = 1; foreach ($products as $product) { 
 								if (existence_products($product->id) <= $product->minimo) { ?>
 									<tr>
 										<td><?= $acum ?></td>
@@ -127,7 +127,7 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 										<td><a class="btn btn-success btn-sm" href="<?= url("detail_inventory/history/{$product->id}") ?>"><i class="fa fa-eye"></i> Historial</a></td>
 									</tr>
 									<?php $acum+=1; } ?>
-								<?php } ?>
+								<?php }} ?>
 							</tbody>
 						</table>
 					</div>
