@@ -34,7 +34,7 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 									<td>
 										<a class="btn btn-primary btn-sm" href="<?= url("detail_product/view/{$product->id}") ?>"><i class="fa fa-eye"></i> Ver</a>
 										<a class="btn btn-success btn-sm" href="<?= url("product/update/{$product->id}") ?>"><i class="fa fa-edit"></i> Actualizar</a>
-										<a class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Eliminar</a>
+										<a class="btn btn-danger btn-sm" href="<?= url("product/delete/{$product->id}") ?>"><i class="fa fa-trash"></i> Eliminar</a>
 									</td>
 								</tr>
 							<?php $acum+= 1;} ?>
