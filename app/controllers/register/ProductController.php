@@ -26,18 +26,19 @@ class ProductController extends View
 			$categorys = $category->all();
 			return $this->render('product/product_form', ['categorys' => $categorys]);
 		}else if($_SERVER['REQUEST_METHOD'] === "POST") {
-			echo "string";
 			$this->save();		
 		}
 	}
 
 	function update($id)
 	{
-		$account = new CategoryModel;
-		$user = $account->find('id', '=', $id);
+		$productModel = new ProductModel;
+		$productResult = $productModel->find('id', '=', $id);
+		$category = new CategoryModel;
+		$categorys = $category->all();	
 		if($_SERVER['REQUEST_METHOD'] == "GET"){
-			if (count($user) != 0) {
-				return $this->render('product/product_form', ['user' => $user]);
+			if (count($productResult) != 0) {
+				return $this->render('product/product_form', ['product' => $productResult, 'categorys' => $categorys]);
 			}else{
 				return $this->render('error/404');
 			}
@@ -46,7 +47,7 @@ class ProductController extends View
 		}
 	}
 
-	private function save()
+	private function save($id=null)
 	{
 		if (!val_csrf()) {
 			return $this->render('error/403');
@@ -61,7 +62,9 @@ class ProductController extends View
 					$product->save();
 					return redirect('list_product');
 				}else{
-
+					$product->id = $id;
+					$product->save();
+					return redirect('list_product'); 
 				}
 			}else{
 				return redirect('product/new', ['error' => $this->error]);

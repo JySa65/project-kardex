@@ -59,9 +59,11 @@ class InstitucionController extends View
 						return redirect('institucion/new', ['error' => 'Institucion ya existente']);
 					}
 					$institucion->save();
-					return redirect('institucion/new');
+					return redirect('list_institution');
 				}else{
-
+					$institucion->id = $id;
+					$institucion->save();
+					return redirect('list_institution');
 				}
 			}else{
 				return redirect('institucion/new', ['error' => $this->error]);

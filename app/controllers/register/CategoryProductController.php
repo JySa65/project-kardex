@@ -39,7 +39,6 @@ class CategoryProductController extends View
 			}
 		}else if($_SERVER['REQUEST_METHOD'] == "POST") {
 			$this->save($id);
-			return redirect('list_category');
 		}
 	}
 	function delete($id)
@@ -77,7 +76,9 @@ class CategoryProductController extends View
 					$category->save();
 					return redirect('list_category');
 				}else{
-
+					$category->id = $id;
+					$category->save();
+					return redirect('list_category');
 				}
 			}else{
 				return redirect('cat_product/new', ['error' => $this->error]);
