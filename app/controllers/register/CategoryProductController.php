@@ -56,7 +56,7 @@ class CategoryProductController extends View
 				if($user->delete($user->id)){
 					return redirect('list_cat_pro', ['message' => 'Categoria Eliminado Sastifactoriamente']);
 				}else{
-					return redirect('list_account', ['message' => 'Categoria No Pudo Ser Eliminada']);
+					return redirect('list_category', ['message' => 'Categoria No Pudo Ser Eliminada']);
 				}
 			}else{
 				return $this->render('error/403');
