@@ -1,6 +1,9 @@
+<?php 
+$user = sessionLocal('user');
+?>
 
 <div id="wrapper">
-
+	
 	<!-- Navigation -->
 	<nav class="navbar navbar-inverse navbar-static-top" role="navigation" style="margin-bottom: 0">
 		<div class="navbar-header">
@@ -36,85 +39,91 @@
 		<div class="navbar-default sidebar" role="navigation" style="">
 			<div class="sidebar-nav navbar-collapse">
 				<ul class="nav" id="side-menu">
-				</li>
-				<li class="active">
-					<a href="<?= url('dashboard'); ?>" class="active"><i class="fa fa-dashboard fa-fw"></i>Panel de control</a>
-				</li>
-				<li>
-					<a href="#!" class="active"><i class="fa fa-users fa-fw"></i>Registros</a>
-					<ul class="nav nav-second-level">
-						<li>
-							<a href="<?= url('account/new') ?>" class="active">Usuario</a>
-						</li>
-						<li>
-							<a href="<?= url('institucion/new')  ?>" class="active">Instituciones</a>
-						</li>
-						<li>
-							<a href="<?= url('cat_product/new') ?>" class="active">Categoria de producto</a>
-						</li>
-						<li>
-							<a href="<?= url('product/new') ?>" class="active">Producto</a>
-						</li>
-					</ul>
-				</li>
-				<li>
-					<a href="" class="active"><i class="fa fa-spinner"></i> Procesos</a>
-					<ul class="nav nav-second-level">
-						<li>
-							<a href="<?=url('general_stadistic') ?>" class="active" >Estadistica General</a>
-						</li>
-						<li>
-							<a href="#!" class="active" >Inventario</a>
-							<ul class="nav nav-third-level">
-								<li>
-									<a href="<?= url('inventory_register/entry') ?>" class="active">Entrada</a>
-								</li>
-								<li>
-									<a href="<?= url('inventory_register/output') ?>" class="active">Salidas</a>
-								</li>
-							</ul>
-						</li>
-					</ul>
-				</li>
-				<li>
-					<a href="<?= url('list'); ?>" class="active"><i class="fa fa-car fa-fw"></i> Listados</a>
-					<ul class="nav nav-second-level">
-						<li>
-							<a href="<?= url('list_account') ?>" class="active">Usuarios</a>
-						</li>
-						<li>
-							<a href="<?= url('list_category')?>" class="active">Categorias de productos</a>
-						</li>
-						<li>
-							<a href="<?= url('list_product')?>" class="active">Productos</a>
-						</li>
-						<li>
-							<a href="<?= url('list_institution')?>" class="active">Instituciones</a>
-						</li>
-						<li>
-							<a href="#!" class="active">Inventario</a>
-							<ul class="nav nav-third-level">
-								<li>
-									<a href="<?= url('list_inventario/resumen')?>" class="active">Inventario</a>
-								</li>
-								<li>
-									<a href="<?= url('list_inventario/entry')?>" class="active">Entrada</a>
-								</li>
-								<li>
-									<a href="<?= url('list_inventario/output')?>" class="active">Salidas</a>
-								</li>
-							</ul>
-						</li>
-						
-						
-					</ul>
-				</li>
-				<li>
-					<a href="#" class="active"><i class="fa fa-university fa-fw"></i> Reportes</a>
-				</li>
-				<li>
-					<a href="<?= url('logout')?>" class="active"><i class="fa fa-support fa-fw"></i> Cerrar Sesi&oacute;n</a>
-				</li>
+					<li class="active">
+						<a href="<?= url('dashboard'); ?>" class="active"><i class="fa fa-dashboard fa-fw"></i>Panel de control</a>
+					</li>
+					<?php if ($user->level != "supervisor") { ?>
+					<li>
+						<a href="#!" class="active"><i class="fa fa-users fa-fw"></i>Registros</a>
+						<ul class="nav nav-second-level">
+							<?php if ($user->level !== "trabajador") { ?>
+							<li>
+								<a href="<?= url('account/new') ?>" class="active">Usuario</a>
+							</li>
+							<li>
+								<a href="<?= url('institucion/new')  ?>" class="active">Instituciones</a>
+							</li>
+							<?php }  ?>
+					
+							<li>
+								<a href="<?= url('cat_product/new') ?>" class="active">Categoria de producto</a>
+							</li>
+							<li>
+								<a href="<?= url('product/new') ?>" class="active">Producto</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="" class="active"><i class="fa fa-spinner"></i> Procesos</a>
+						<ul class="nav nav-second-level">
+							<li>
+								<a href="<?=url('general_stadistic') ?>" class="active" >Estadistica General</a>
+							</li>
+							<li>
+								<a href="#!" class="active" >Inventario</a>
+								<ul class="nav nav-third-level">
+									<li>
+										<a href="<?= url('inventory_register/entry') ?>" class="active">Entrada</a>
+									</li>
+									<li>
+										<a href="<?= url('inventory_register/output') ?>" class="active">Salidas</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="<?= url('list'); ?>" class="active"><i class="fa fa-car fa-fw"></i> Listados</a>
+						<ul class="nav nav-second-level">
+							<?php if ($user->level !== "trabajador") { ?>
+							<li>
+								<a href="<?= url('list_account') ?>" class="active">Usuarios</a>
+							</li>
+							<li>
+								<a href="<?= url('list_institution')?>" class="active">Instituciones</a>
+							</li>
+							<?php } ?>
+							<li>
+								<a href="<?= url('list_category')?>" class="active">Categorias de productos</a>
+							</li>
+							<li>
+								<a href="<?= url('list_product')?>" class="active">Productos</a>
+							</li>
+							<li>
+								<a href="#!" class="active">Inventario</a>
+								<ul class="nav nav-third-level">
+									<li>
+										<a href="<?= url('list_inventario/resumen')?>" class="active">Inventario</a>
+									</li>
+									<li>
+										<a href="<?= url('list_inventario/entry')?>" class="active">Entrada</a>
+									</li>
+									<li>
+										<a href="<?= url('list_inventario/output')?>" class="active">Salidas</a>
+									</li>
+								</ul>
+							</li>
+							
+							
+						</ul>
+					</li>
+					<?php } ?>
+					<li>
+						<a href="#" class="active"><i class="fa fa-university fa-fw"></i> Reportes</a>
+					</li>
+					<li>
+						<a href="<?= url('logout')?>" class="active"><i class="fa fa-support fa-fw"></i> Cerrar Sesi&oacute;n</a>
+					</li>
 			</ul>
 		</div>
 		<!-- /.sidebar-collapse -->
