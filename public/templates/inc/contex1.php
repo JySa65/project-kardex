@@ -39,7 +39,6 @@ $user = sessionLocal('user');
 		<div class="navbar-default sidebar" role="navigation" style="">
 			<div class="sidebar-nav navbar-collapse">
 				<ul class="nav" id="side-menu">
-<<<<<<< HEAD
 				</li>
 				<li class="active">
 					<a href="<?= url('dashboard'); ?>" class="active"><i class="fa fa-dashboard fa-fw"></i>Panel de control</a>
@@ -119,13 +118,18 @@ $user = sessionLocal('user');
 						<li>
 							<a href="<?=url('report_list_empresa')?>" class="active" target="_blank">Instituciones</a>
 						</li>
+						<li>
+							<a href="<?=url('report_list_product')?>">Productos</a>
+						</li>
+						<li>
+							<a href="<?=url('report_list_category')?>"></a>
+						</li>
 						
 					</ul>
 				</li>
 				<li>
 					<a href="<?= url('logout')?>" class="active"><i class="fa fa-support fa-fw"></i> Cerrar Sesi&oacute;n</a>
 				</li>
-=======
 					<li class="active">
 						<a href="<?= url('dashboard'); ?>" class="active"><i class="fa fa-dashboard fa-fw"></i>Panel de control</a>
 					</li>
@@ -211,7 +215,6 @@ $user = sessionLocal('user');
 					<li>
 						<a href="<?= url('logout')?>" class="active"><i class="fa fa-support fa-fw"></i> Cerrar Sesi&oacute;n</a>
 					</li>
->>>>>>> 0e1afa3f9cd1b9c74fa33c69f9cb0725624b546d
 			</ul>
 		</div>
 		<!-- /.sidebar-collapse -->
