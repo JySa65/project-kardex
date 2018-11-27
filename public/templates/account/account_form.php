@@ -1,7 +1,6 @@
 <?php
 include(TEMPLATES_DIR . "templates/inc/head.php");
 include(TEMPLATES_DIR . "templates/inc/contex1.php");
-var_dump($user);
 ?>
 <div class="row">
 	<div class="col-lg-12">
@@ -32,25 +31,25 @@ var_dump($user);
 						<div class="col-lg-6">
 							<div class="form-group">
 								<label for="id_cedula">Cedula</label>
-								<input class="form-control" id="id_cedula" name="cedula" type="text" placeholder="Cedula"  maxlength="8" onkeypress="return solonumeros(event)" autocomplete="off" required value="<?= isset($user) ? $user->cedula : '' ?>">
+								<input class="form-control" id="id_cedula" name="cedula" type="text" placeholder="Cedula"  maxlength="8" onkeypress="return solonumeros(event)" autocomplete="off" required value="<?= isset($users) ? $users->cedula : '' ?>">
 							</div>
 						</div>
 						<div class="col-lg-6">
 							<div class="form-group">
 								<label for="id_name">Nombre</label>
-								<input class="form-control" id="id_name" name="name" type="text" placeholder="Primer Nombre" maxlength=15 autocomplete="off" onkeypress="return sololetras(event)" required value="<?= isset($user) ? $user->name : '' ?>">
+								<input class="form-control" id="id_name" name="name" type="text" placeholder="Primer Nombre" maxlength=15 autocomplete="off" onkeypress="return sololetras(event)" required value="<?= isset($users) ? $users->name : '' ?>">
 							</div>
 						</div>
 						<div class="col-lg-6">
 							<div class="form-group">
 								<label for="id_last_name">Apellido</label>
-								<input class="form-control" id="id_last_name" name="last_name" type="text" placeholder=" Primer Apellido" maxlength="15" onkeypress="return sololetras(event)" autocomplete="off" required value="<?= isset($user) ? $user->last_name : '' ?>">
+								<input class="form-control" id="id_last_name" name="last_name" type="text" placeholder=" Primer Apellido" maxlength="15" onkeypress="return sololetras(event)" autocomplete="off" required value="<?= isset($users) ? $users->last_name : '' ?>">
 							</div>
 						</div>
 						<div class="col-lg-6">
 							<div class="form-group">
 								<label for="id_email">Correo Electronico</label>
-								<input class="form-control" id="id_email" name="email" type="email" placeholder="Correo Electronico" maxlength="255" autocomplete="off" value="<?= isset($user) ? $user->email : '' ?>">
+								<input class="form-control" id="id_email" name="email" type="email" placeholder="Correo Electronico" maxlength="255" autocomplete="off" value="<?= isset($users) ? $users->email : '' ?>">
 							</div>
 						</div>
 						<div class="col-lg-6">
@@ -64,10 +63,10 @@ var_dump($user);
 								</select>
 							</div>
 						</div>
-						<div class="<?= isset($user) ? 'col-lg-6' : 'col-lg-12' ?>">
+						<div class="<?= isset($users) ? 'col-lg-6' : 'col-lg-12' ?>">
 							<div class="form-group">
 								<label for="id_address">Direccion</label>
-								<textarea name="address" id="id_address" cols="30" rows="1" class="form-control" style="overflow:auto; height: 50%; resize: none;" placeholder="Direccion" autocomplete="off"><?= isset($user) ? $user->address : '' ?></textarea>
+								<textarea name="address" id="id_address" cols="30" rows="1" class="form-control" style="overflow:auto; height: 50%; resize: none;" placeholder="Direccion" autocomplete="off"><?= isset($users) ? $users->address : '' ?></textarea>
 							</div>
 						</div>
 						<div class="col-lg-12">

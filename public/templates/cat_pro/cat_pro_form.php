@@ -21,13 +21,19 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 						<div class="col-lg-6">
 							<div class="form-group">
 								<label>Nombre de la categoria  <span style="color: red">*</span></label>
-								<input type="text" name="name" id="id_name" class="form-control" onkeypress="return sololetras(event)" placeholder="Ej: Productos de oficina" value="<?= isset($user) ? $user->name : '' ?>">
+								<input type="text" name="code" id="id_code" class="form-control" placeholder="Ej: 3-sb3" value="<?= isset($category) ? $category->code : '' ?>">
 							</div>
 						</div>
 						<div class="col-lg-6">
 							<div class="form-group">
+								<label>Nombre de la categoria  <span style="color: red">*</span></label>
+								<input type="text" name="name" id="id_name" class="form-control" onkeypress="return sololetras(event)" placeholder="Ej: Productos de oficina" value="<?= isset($category) ? $category->name : '' ?>">
+							</div>
+						</div>
+						<div class="col-lg-12">
+							<div class="form-group">
 								<label>Descripci&oacute;n</label>
-								<input type="text" name="description" id="id_description" class="form-control" onkeypress="return sololetras(event)" placeholder="Breve Descripcion de la categoria" value="<?= isset($user) ? $user->description : '' ?>">
+								<input type="text" name="description" id="id_description" class="form-control" onkeypress="return sololetras(event)" placeholder="Breve Descripcion de la categoria" value="<?= isset($category) ? $category->description : '' ?>">
 							</div>
 						</div>
 						<div class="col-lg-12">
