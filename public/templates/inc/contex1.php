@@ -111,6 +111,12 @@
 				</li>
 				<li>
 					<a href="#" class="active"><i class="fa fa-university fa-fw"></i> Reportes</a>
+					<ul class="nav nav-second-level">
+						<li>
+							<a href="<?=url('report_list_empresa')?>" class="active" target="_blank">Instituciones</a>
+						</li>
+						
+					</ul>
 				</li>
 				<li>
 					<a href="<?= url('logout')?>" class="active"><i class="fa fa-support fa-fw"></i> Cerrar Sesi&oacute;n</a>

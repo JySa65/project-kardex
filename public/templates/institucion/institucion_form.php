@@ -33,7 +33,7 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 						<div class="col-lg-6">
 							<div class="form-group">
 								<label>RIF de la institucion <span style="color: red">*</span></label>
-								<input pattern="^[JGVEP][-][0-9]{7,9}[-][0-9]{1}" min="1" name="rif" id="id_rif" class="form-control" placeholder="Ej: J0000000" value="<?= isset($user) ? $user->rif : '' ?>" required>
+								<input min="1" name="rif" id="id_rif" class="form-control" placeholder="Ej: J0000000" value="<?= isset($user) ? $user->rif : '' ?>" required>
 							</div>
 						</div>
 						<div class="col-lg-6">

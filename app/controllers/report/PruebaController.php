@@ -29,7 +29,7 @@ class PruebaController
 		$institutes = $this->list_institute();
 		foreach ($institutes as $institute) {
 			$pdf->Cell(40, 5, "{$institute->rif}", 1, 0, 'C');
-			$pdf->Cell(110, 5, "{$institute->name}", 1, 0, 'C');
+			$pdf->Cell(110, 5, utf8_decode("{$institute->name}"), 1, 0, 'C');
 			$pdf->Cell(40, 5, "{$institute->tlf}", 1, 1, 'C');
 		}
 		$pdf->Output();
