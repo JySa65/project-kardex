@@ -43,8 +43,14 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 						</div>
 						<div class="col-md-6">
 							<div class="form-group">
-								<label>Cantidad Minina Inventario<span style="color: red">*</span></label>
-								<input type="number" name="minimo" id="id_minimo" class="form-control" onkeypress="return solonumeros(event)" placeholder="Por Defecto Cant = 0" required autocomplete="off" value="<?= isset($product) ? $product->minimo : '' ?>">
+								<label>Precio De Prodcuto</label>
+								<input type="number" name="price" id="id_price" class="form-control" onkeypress="return solonumeros(event)" placeholder="Por Defecto Precio = 0" autocomplete="off" value="<?= isset($product) ? $product->price : '' ?>">
+							</div>
+						</div>	
+						<div class="col-md-6">
+							<div class="form-group">
+								<label>Cantidad Minina Inventario</label>
+								<input type="number" name="minimo" id="id_minimo" class="form-control" onkeypress="return solonumeros(event)" placeholder="Por Defecto Cant = 0" autocomplete="off" value="<?= isset($product) ? $product->minimo : '' ?>">
 							</div>
 						</div>	
 					</div>

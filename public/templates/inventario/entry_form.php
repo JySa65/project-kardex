@@ -89,6 +89,7 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 															<tr>
 																<th>Nombre</th>
 																<th>Existencia</th>
+																<th>Precio</th>
 																<th>Añadir</th>
 																<th>Opciones</th>
 															</tr>
@@ -104,8 +105,17 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 									<hr>
 									<div class="row">
 										<div class="container-fluid text-center">
-											<div class="col-lg-12">
+											<div class="col-lg-6">
+												<div class="form-group" style="font-size: 30px">
+													<label>
+														<b>Total:</b>
+													</label>
+													<span id="id_total">0</span>
+												</div>
+											</div>
+											<div class="col-lg-6">
 												<div class="form-group">
+													
 													<button class="btn btn-primary " type="submit" name="save"><i class="fa fa-save"></i> Aceptar</button>
 												</div>
 											</div>

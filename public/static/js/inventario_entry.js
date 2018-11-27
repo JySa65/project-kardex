@@ -68,12 +68,16 @@ document.querySelector("#id_context").addEventListener('click', function(e){
 				<td hidden>${dat.id}</td>
 				<td>${dat.name}</td>
 				<td>${res['disp']}</td>
+				<td>${dat.price}</td>
 				<td><input type="number" class="form-control valid" onblur="javascript:check_input(event)"
 				required name="${dat.name}_${dat.id}" autocomplete="off" min="1"> </td>
 				<td><button type="button" class="btn btn-danger" name="delete"><i class="fa fa-trash"></i></button></td>
 				</tr>`
 				document.querySelector("#container").removeAttribute("hidden");
 				$("#id_result").append(tr);
+				var mnt_total =  document.querySelector("#id_total");
+				var int_total = Number(mnt_total.textContent)
+				mnt_total.textContent = int_total + Number(dat.price)
 			}
 		})
 	}

@@ -18,6 +18,7 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 						<thead>
 							<tr>
 								<th>#</th>
+								<th>Codigo</th>
 								<th>Nombre</th>
 								<th>Descripcion</th>
 								<th>Acciones</th>
@@ -27,6 +28,7 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 								<?php $acum=1; foreach ($categorys as $category) {  ?>
 								<tr>
 									<td><?=$acum?></td>
+									<td><?=$category->code?></td>
 									<td><?=$category->name?></td>
 									<td><?=$category->description?></td>
 									<td>
