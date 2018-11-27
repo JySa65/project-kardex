@@ -1,6 +1,7 @@
 <?php
 include(TEMPLATES_DIR . "templates/inc/head.php");
 include(TEMPLATES_DIR . "templates/inc/contex1.php");
+var_dump($user);
 ?>
 <div class="row">
 	<div class="col-lg-12">
@@ -52,19 +53,17 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 								<input class="form-control" id="id_email" name="email" type="email" placeholder="Correo Electronico" maxlength="255" autocomplete="off" value="<?= isset($user) ? $user->email : '' ?>">
 							</div>
 						</div>
-						<?php if (!isset($user)) { ?>
-							<div class="col-lg-6">
-								<div class="form-group">
-									<label for="id_level">Nivel de Acceso</label>
-									<select name="level" id="id_level" class="form-control" autofocus="on" autocomplete="off" required value="">
-										<option value="" selected="">Escojer Nivel</option>
-										<option value="administrador">Administrador</option>
-										<option value="supervisor">Supervisor</option>
-										<option value="trabajador">Trabajador</option>
-									</select>
-								</div>
+						<div class="col-lg-6">
+							<div class="form-group">
+								<label for="id_level">Nivel de Acceso</label>
+								<select name="level" id="id_level" class="form-control" autofocus="on" autocomplete="off" required value="">
+									<option value="" selected="">Escojer Nivel</option>
+									<option value="administrador">Administrador</option>
+									<option value="supervisor">Supervisor</option>
+									<option value="trabajador">Trabajador</option>
+								</select>
 							</div>
-						<?php } ?>
+						</div>
 						<div class="<?= isset($user) ? 'col-lg-6' : 'col-lg-12' ?>">
 							<div class="form-group">
 								<label for="id_address">Direccion</label>
