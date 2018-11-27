@@ -226,4 +226,4 @@ $user = sessionLocal('user');
 		<!-- /.navbar-static-side -->
 	</nav>
 
-	<div id="page-wrapper">
+</div>
