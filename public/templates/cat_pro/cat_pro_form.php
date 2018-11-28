@@ -4,7 +4,7 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 ?>
 <div class="row">
 	<div class="col-lg-12">
-		<h1 class="page-header">Productos | <a href="<?= url('dashboard') ?>" class="btn btn-success"><i class="fa fa-reply"></i> Regresar</a></h1>
+		<h1 class="page-header">Categoria Producto | <a href="<?= url('dashboard') ?>" class="btn btn-success"><i class="fa fa-reply"></i> Regresar</a></h1>
 	</div>
 </div>
 
@@ -20,7 +20,7 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 						<input type="hidden" value="<?= csrf_token() ?>" name="csrftoken" required>
 						<div class="col-lg-6">
 							<div class="form-group">
-								<label>Nombre de la categoria  <span style="color: red">*</span></label>
+								<label>Codigo de la categoria  <span style="color: red">*</span></label>
 								<input type="text" name="code" id="id_code" class="form-control" placeholder="Ej: 3-sb3" value="<?= isset($category) ? $category->code : '' ?>">
 							</div>
 						</div>

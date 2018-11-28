@@ -18,7 +18,7 @@ class ListProductController extends View
 	function index()
 	{
 		$product = new ProductModel;
-		$products = $product->all();
+		$products = $product->all_products();
 		return $this->render('product/list', ["products"=>$products]);
 
 	}

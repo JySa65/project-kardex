@@ -18,6 +18,7 @@ class CategoryBD extends Conection
 
         CREATE TABLE IF NOT EXISTS category (
         id BIGSERIAL NOT NULL PRIMARY KEY,
+        code varchar(100) NOT NULL,
         name varchar(1000) NOT NULL,
         description text,
         created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,

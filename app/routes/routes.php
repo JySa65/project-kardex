@@ -33,6 +33,10 @@ new Routes([
 	#password
 	"change_password" => "index/ChangePasswordController",
 
+	#report view
+	"report-list-empresa" => "report/ListInstitutionReportController", 
+
+	#report pdf
 	"report_list_empresa" => "report/PruebaController"
 
 ])

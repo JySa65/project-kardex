@@ -33,7 +33,7 @@ class AccountController extends View
 		$user = $account->find('id', '=', $id);
 		if($_SERVER['REQUEST_METHOD'] == "GET"){
 			if (count($user) != 0) {
-				return $this->render('account/account_form', ['user' => $user]);
+				return $this->render('account/account_form', ['users' => $user]);
 			}else{
 				return $this->render('error/404');
 			}
@@ -85,7 +85,9 @@ class AccountController extends View
 					if (!empty($comprobar)) {
 						return redirect('account/new', ['error' => 'La Cedula o el correo ya existe']);
 					}
+
 					$account->save();
+					var_dump($account);
 					return redirect('list_account');
 				}else{
 					$account->id = (int)test_input($id);

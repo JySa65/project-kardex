@@ -32,7 +32,7 @@ class InstitucionController extends View
 		$user = $account->find('id', '=', $id);
 		if($_SERVER['REQUEST_METHOD'] == "GET"){
 			if (count($user) != 0) {
-				return $this->render('institucion/institucion_form', ['user' => $user]);
+				return $this->render('institucion/institucion_form', ['institute' => $user]);
 			}else{
 				return $this->render('error/404');
 			}

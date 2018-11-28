@@ -33,7 +33,7 @@ class CategoryProductController extends View
 		$user = $account->find('id', '=', $id);
 		if($_SERVER['REQUEST_METHOD'] == "GET"){
 			if (count($user) != 0) {
-				return $this->render('cat_pro/cat_pro_form', ['user' => $user]);
+				return $this->render('cat_pro/cat_pro_form', ['category' => $user]);
 			}else{
 				return $this->render('error/404');
 			}
@@ -70,6 +70,7 @@ class CategoryProductController extends View
 		}else{
 			if ($this->form_valid()) {
 				$category = new CategoryModel;
+				$category->code = test_input($_POST['code']);
 				$category->name = test_input($_POST['name']);
 				$category->description = test_input($_POST['description']);
 				if ($id == null) {
