@@ -20,6 +20,7 @@ class ProductBD extends Conection
         id BIGSERIAL NOT NULL PRIMARY KEY,
         id_category INT NOT NULL,
         name varchar(1000) NOT NULL,
+        price int NOT NULL,
         description text,
         minimo INT DEFAULT 0,
         created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,

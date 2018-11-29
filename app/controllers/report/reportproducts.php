@@ -22,15 +22,15 @@ class reportproducts
 		$pdf->Cell(180, 4, 'Listado De productos', 0, 1, 'C');
 		$pdf->Ln(3);
 		$pdf->SetFont('Arial', 'B', 11);
-		$pdf->Cell(40, 5, 'Rif', 1, 0, 'C');
-		$pdf->Cell(110, 5, 'Nombre', 1, 0, 'C');
-		$pdf->Cell(40, 5, 'Telefono', 1, 1, 'C');
+		$pdf->Cell(40, 5, 'CATEGORIA', 1, 0, 'C');
+		$pdf->Cell(110, 5, 'NOMBRE', 1, 0, 'C');
+		$pdf->Cell(40, 5, 'PRECIO UNITARIO', 1, 1, 'C');
 		$pdf->SetFont('Arial', '', 10);
 		$products = $this->list_product();
 		foreach ($products as $product) {
-			$pdf->Cell(40, 5, "{$product->name}", 1, 0, 'C');
-			$pdf->Cell(110, 5, utf8_decode("{$product->description}"), 1, 0, 'C');
-			$pdf->Cell(40, 5, "{$product->name}", 1, 1, 'C');
+			$pdf->Cell(40, 5, "{$product->id_category}", 1, 0, 'C');
+			$pdf->Cell(110, 5, utf8_decode("{$product->name}"), 1, 0, 'C');
+			$pdf->Cell(40, 5, "{$product->price}", 1, 1, 'C');
 		}
 		$pdf->Output();
 	}

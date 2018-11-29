@@ -22,15 +22,15 @@ class reportcategorys
 		$pdf->Cell(180, 4, 'Listado De Categorias de producto', 0, 1, 'C');
 		$pdf->Ln(3);
 		$pdf->SetFont('Arial', 'B', 11);
-		$pdf->Cell(40, 5, 'Rif', 1, 0, 'C');
+		$pdf->Cell(40, 5, 'Codigo', 1, 0, 'C');
 		$pdf->Cell(110, 5, 'Nombre', 1, 0, 'C');
-		$pdf->Cell(40, 5, 'Telefono', 1, 1, 'C');
+		$pdf->Cell(40, 5, 'Descripcion', 1, 1, 'C');
 		$pdf->SetFont('Arial', '', 10);
 		$categorys = $this->list_category();
 		foreach ($categorys as $category) {
-			$pdf->Cell(40, 5, "{$category->name}", 1, 0, 'C');
-			$pdf->Cell(110, 5, utf8_decode("{$category->description}"), 1, 0, 'C');
-			$pdf->Cell(40, 5, "{$category->name}", 1, 1, 'C');
+			$pdf->Cell(40, 5, "{$category->code}", 1, 0, 'C');
+			$pdf->Cell(110, 5, utf8_decode("{$category->name}"), 1, 0, 'C');
+			$pdf->Cell(40, 5, "{$category->description}", 1, 1, 'C');
 		}
 		$pdf->Output();
 	}

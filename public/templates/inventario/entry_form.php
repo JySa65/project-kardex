@@ -106,12 +106,7 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 									<div class="row">
 										<div class="container-fluid text-center">
 											<div class="col-lg-6">
-												<div class="form-group" style="font-size: 30px">
-													<label>
-														<b>Total:</b>
-													</label>
-													<span id="id_total">0</span>
-												</div>
+												<div class="form-group" style="font-size: 30px">													
 											</div>
 											<div class="col-lg-6">
 												<div class="form-group">

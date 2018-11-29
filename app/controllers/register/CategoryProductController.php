@@ -30,10 +30,10 @@ class CategoryProductController extends View
 	function update($id)
 	{
 		$account = new CategoryModel;
-		$user = $account->find('id', '=', $id);
+		$accusr = $account->find('id', '=', $id);
 		if($_SERVER['REQUEST_METHOD'] == "GET"){
-			if (count($user) != 0) {
-				return $this->render('cat_pro/cat_pro_form', ['user' => $user]);
+			if (count($accusr) != 0) {
+				return $this->render('cat_pro/cat_pro_form', ['accusr' => $accusr]);
 			}else{
 				return $this->render('error/404');
 			}
@@ -44,16 +44,16 @@ class CategoryProductController extends View
 	function delete($id)
 	{
 		$account = new CategoryModel;
-		$user = $account->find('id', '=', $id);
+		$accusr = $account->find('id', '=', $id);
 		if($_SERVER['REQUEST_METHOD'] == "GET"){
-			if (count($user) != 0) {
-				return $this->render('cat_pro/cat_pro_delete', ['user' => $user]);
+			if (count($accusr) != 0) {
+				return $this->render('cat_pro/cat_pro_delete', ['accusr' => $accusr]);
 			}else{
 				return $this->render('error/404');
 			}
 		}else if($_SERVER['REQUEST_METHOD'] == "POST") {
 			if (isset($_POST['csrftoken'])) {
-				if($user->delete($user->id)){
+				if($accusr->delete($accusr->id)){
 					return redirect('list_cat_pro', ['message' => 'Categoria Eliminado Sastifactoriamente']);
 				}else{
 					return redirect('list_category', ['message' => 'Categoria No Pudo Ser Eliminada']);
@@ -70,6 +70,7 @@ class CategoryProductController extends View
 		}else{
 			if ($this->form_valid()) {
 				$category = new CategoryModel;
+				$category->code = test_input($_POST['code']);
 				$category->name = test_input($_POST['name']);
 				$category->description = test_input($_POST['description']);
 				if ($id == null) {

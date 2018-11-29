@@ -57,6 +57,7 @@ class ProductController extends View
 				$product->id_category = (int)test_input($_POST['category']);
 				$product->name = test_input($_POST['name']);
 				$product->description = test_input($_POST['description']);
+				$product->price = (int)test_input($_POST['price']);
 				$product->minimo = (int)test_input($_POST['minimo']);
 				if ($id == null) {
 					$product->save();
