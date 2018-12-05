@@ -32,13 +32,8 @@ class CategoryProductController extends View
 		$account = new CategoryModel;
 		$accusr = $account->find('id', '=', $id);
 		if($_SERVER['REQUEST_METHOD'] == "GET"){
-<<<<<<< HEAD
-			if (count($user) != 0) {
-				return $this->render('cat_pro/cat_pro_form', ['category' => $user]);
-=======
 			if (count($accusr) != 0) {
 				return $this->render('cat_pro/cat_pro_form', ['accusr' => $accusr]);
->>>>>>> aa477ea1bd9587e270f90fedc29c800aa9438292
 			}else{
 				return $this->render('error/404');
 			}
