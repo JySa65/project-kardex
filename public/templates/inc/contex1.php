@@ -125,10 +125,13 @@ $user = sessionLocal('user');
 								<a href="<?= url('report-list-empresa')?>" class="active">General</a>
 							</li>
 							<li>
-								<a href="<?= url('')?>" class="active">Instituciones</a>
+								<a href="<?= url('report_list_empresa')?>" class="active" target="_blank">Instituciones</a>
 							</li>
 							<li>
-								<a href="<?= url('list_inventario/entry')?>" class="active">Producto</a>
+								<a href="<?= url('report_list_category')?>" class="active" target="_blank">Categorias</a>
+							</li>
+							<li>
+								<a href="<?= url('report_list_product')?>" class="active" target="_blank">Productos</a>
 							</li>
 						</ul>
 					</li>

@@ -32,7 +32,7 @@ include(TEMPLATES_DIR . "templates/inc/contex1.php");
 						<div class="col-md-6">
 							<div class="form-group">
 								<label>Nombre del producto <span style="color: red">*</span></label>
-								<input type="text" name="name" id="id_name" class="form-control" onkeypress="return sololetras(event)" placeholder="Ej: Inyectadora" value="<?= isset($product) ? $product->name : '' ?>" required>
+								<input type="text" name="name" id="id_name" class="form-control" placeholder="Ej: Inyectadora" value="<?= isset($product) ? $product->name : '' ?>" required>
 							</div>
 						</div>
 						<div class="col-lg-6">

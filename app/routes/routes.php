@@ -37,7 +37,10 @@ new Routes([
 	"report-list-empresa" => "report/ListInstitutionReportController", 
 
 	#report pdf
-	"report_list_empresa" => "report/PruebaController"
+	"report_list_empresa" => "report/PruebaController",
+	"report_list_empresa" => "report/PruebaController",
+	"report_list_product" => "report/reportproducts",
+	"report_list_category" => "report/reportcategorys"
 
 ])
 
