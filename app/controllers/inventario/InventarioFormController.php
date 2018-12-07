@@ -77,17 +77,16 @@ class InventarioFormController extends View
 		$this->id_reason = $id_reason;
 		foreach ($_POST as $key => $value) {
 			$pre = explode("_", $key);
-			if (count($pre) == 2) {
-				$product = new ProductModel;
-				$res = $product->execute_query("SELECT * FROM  product WHERE id={$pre[1]} and name LIKE '{$pre[0]}%'");
-				if (!empty($res[0])) {
-					$inpout = new InpoutModel;
-					$inpout->id_product = $res[0]->id;
-					$inpout->id_reason = $id_reason;
-					$inpout->quantity = $value;
-					$inpout->type = $num;
-					$inpout->save();
-				}
+			$pre = end($pre);
+			$product = new ProductModel;
+			$res = $product->execute_query("SELECT * FROM  product WHERE id={$pre}");
+			if (!empty($res[0])) {
+				$inpout = new InpoutModel;
+				$inpout->id_product = $res[0]->id;
+				$inpout->id_reason = $id_reason;
+				$inpout->quantity = $value;
+				$inpout->type = $num;
+				$inpout->save();
 			}
 		}
 	}

@@ -22,15 +22,21 @@ class reportproducts
 		$pdf->Cell(180, 4, 'Listado De productos', 0, 1, 'C');
 		$pdf->Ln(3);
 		$pdf->SetFont('Arial', 'B', 11);
-		$pdf->Cell(40, 5, 'CATEGORIA', 1, 0, 'C');
-		$pdf->Cell(110, 5, 'NOMBRE', 1, 0, 'C');
-		$pdf->Cell(40, 5, 'PRECIO UNITARIO', 1, 1, 'C');
+		$pdf->Cell(25, 5, 'CATEGORIA', 1, 0, 'C');
+		$pdf->Cell(71, 5, 'NOMBRE', 1, 0, 'C');
+		$pdf->Cell(37, 5, 'PRECIO UNITARIO', 1, 0, 'C');
+		$pdf->Cell(25, 5, 'EXISTENCIA', 1, 0, 'C');
+		$pdf->Cell(34, 5, 'TOTAL GENERAL', 1, 1, 'C');
 		$pdf->SetFont('Arial', '', 10);
 		$products = $this->list_product();
 		foreach ($products as $product) {
-			$pdf->Cell(40, 5, "{$product->id_category}", 1, 0, 'C');
-			$pdf->Cell(110, 5, utf8_decode("{$product->name}"), 1, 0, 'C');
-			$pdf->Cell(40, 5, "{$product->price}", 1, 1, 'C');
+			$exist = existence_products($product->id);
+			$result = $product->price * $exist;
+ 			$pdf->Cell(25, 5, "{$product->id_category}", 1, 0, 'C');
+			$pdf->Cell(71, 5, utf8_decode("{$product->name}"), 1, 0, 'C');
+			$pdf->Cell(37, 5, "{$product->price} Bs", 1, 0, 'C');
+			$pdf->Cell(25, 5, $exist, 1, 0, 'C');
+			$pdf->Cell(34, 5, "{$result} Bs", 1, 1, 'C');
 		}
 		$pdf->Output();
 	}
@@ -38,7 +44,7 @@ class reportproducts
 	function list_product()
 	{
 		$product = new ProductModel;
-		$products = $product->all();
+		$products = $product->all_products();
 		return $products;
 	}
 }

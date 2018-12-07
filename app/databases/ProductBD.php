@@ -23,7 +23,6 @@ class ProductBD extends Conection
         price int NOT NULL,
         description text,
         minimo INT DEFAULT 0,
-        price INT DEFAULT 0,
         created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
         updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
         FOREIGN KEY (id_category) REFERENCES category(id));

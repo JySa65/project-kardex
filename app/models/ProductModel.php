@@ -11,7 +11,7 @@ class ProductModel extends Model
 
 	public function all_products()
 	{
-		$query = "SELECT p.name, p.description, p.id, c.code as id_category, p.price 
+		$query = "SELECT p.name, p.description, p.id, c.code as id_category, p.price, p.id
 			FROM product as p 
 			LEFT JOIN category as c 
 			ON p.id_category = c.id";

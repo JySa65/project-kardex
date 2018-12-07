@@ -59,7 +59,9 @@ class ListInstitutionReportController extends View
 		$date_min = !empty($_POST['min']) ? 
 					$_POST['min'] : 
 					date("Y-m-d",strtotime(date('Y-m-d')."- 100 year"));
-		$date_max = !empty($_POST['max']) ? $_POST['max'] : date('Y-m-d');
+		$date_max = !empty($_POST['max']) ? 
+					date("Y-m-d",strtotime($_POST['max']."+ 1 day")) : 
+					date("Y-m-d",strtotime(date('Y-m-d')."+ 1 day"));
 
 		if (empty($institute)) {
 				return redirect('report-list-empresa');
